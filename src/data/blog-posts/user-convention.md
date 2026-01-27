@@ -56,3 +56,5 @@ description: 平台仅限 SAP 学习与实践，禁止商用及违规操作；�
 
 管理员联系邮箱：admin@sapehr.cn
  
+---
+🚀若您在SAPGUI中访问或显示异常，请<a href="/blog/change-sapgui-browser-control/" rel="noopener">查看修改设置</a>。
