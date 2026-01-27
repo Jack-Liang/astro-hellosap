@@ -5,6 +5,8 @@ publishDate: 27 Jan 2026
 description: 安装和配置 SAP GUI 客户端
 ---
 
+[SAPGUI安装包下载地址](/blog/study-resource)
+
 # 1. SAPGui安装（windows系统）
 
 如果你的系统里已经安装了SAPGui，可以跳过这一节

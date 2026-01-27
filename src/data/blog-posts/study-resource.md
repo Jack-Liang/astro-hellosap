@@ -6,6 +6,13 @@ description: SAP学习资源下载链接
 ---
 ![casual-life-3d-workspace](/assets/blog/casual-life-3d-workspace.png)
 
+## SAPGui安装包
+- [SAPGui安装包](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9)，Windows系统默认装尾号342的程序，详阅链接中的README文件
+- [SAPGui安装和配置说明](/blog/installation-and-configuration-SAPGUI)
+
+
+
+## 教程
 - [EWM培训资料](https://pan.baidu.com/s/1zAQuOgtv2WUMRYsA2PUyYA?pwd=ueem)
 - [SAP教程 FICO模块](https://pan.baidu.com/s/1V_I4AkpZ7lO-A7dXzFEu7w?pwd=iqwk)
 - [SAP教程 SD模块](https://pan.baidu.com/s/17edY2MFVykMXCr9c82s89g?pwd=rhad)
@@ -15,4 +22,6 @@ description: SAP学习资源下载链接
 - [SAP教程 S4资料](https://pan.baidu.com/s/1NwsCLlCaMTYL4eHXFjG1xA?pwd=vwuh)
 - [Deliverable for Phase1-项目准备等5个文件](https://pan.baidu.com/s/1lVUqSWHjm1okKcCDLgKxzQ?pwd=tsu6)
 - [后勤WM等2个文件](https://pan.baidu.com/s/1WeThCc15hjpQpLP7fft-SQ?pwd=farw)
-- [SAPGui安装包](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9) win默认装尾号342程序，详阅README文件
+- [更多SAP教程-200+G](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)
+
+
