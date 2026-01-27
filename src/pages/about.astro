@@ -8,7 +8,7 @@ const permalink = `${Astro.site.href}about`;
 
 <BaseLayout title={title} description={description} permalink={permalink} current="about">
   <div class="container">
-    <h1>About</h1>
+    <h1>关于我</h1>
     <figure class="about-image">
       <img src="/assets/about-illustration.png" alt="Illustration of a notebook" width="330">
       <figcaption>
@@ -18,12 +18,22 @@ const permalink = `${Astro.site.href}about`;
         <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
       </figcaption>
     </figure>
-    <p>Text placeholder via <a href="https://jeffsum.com/" target="_blank">Jeffsum</a>.</p>
-    <p>So you two dig up, dig up dinosaurs? What do they got in there? King Kong? My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Life finds a way. God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.</p>
-    <p>You really think you can fly that thing? You know what? It is beets. I've crashed into a beet truck. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Is this my espresso machine? Wh-what is-h-how did you get my espresso machine?</p>
-    <p>Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Hey, take a look at the earthlings. Goodbye! I was part of something special. Just my luck, no ice. You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Jaguar shark! So tell me - does it really exist? This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows. Yes, Yes, without the oops! You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Yes, Yes, without the oops! Do you have any idea how long it takes those cups to decompose. They're using our own satellites against us. And the clock is ticking. Do you have any idea how long it takes those cups to decompose. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!</p>
+
+    <section class="site-intro">
+      <h2>欢迎来到SAP学习中心</h2>
+      <p>这是一个SAP学习者建立的交流网站，记录了我在SAP学习过程中的经验与问题。
+        如果你有任何问题或建议，请欢迎留言交流。</p>
+        <p>
+        我在SAP学习过程中，遇到了许多问题，也学习了许多新的知识。
+        我希望与你分享这些经验，也欢迎你与我交流。
+        </p>
+        <p>
+        如果你想投稿到本网站也可以通过下面的邮箱发给我。
+        </p>
+      <p>我们的邮箱是<a href="mailto:admin@sapehr.cn">admin@sapehr.cn</a>。
+      </p>
+    </section>
+
   </div>
 </BaseLayout>
 

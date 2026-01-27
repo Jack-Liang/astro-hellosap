@@ -1,16 +1,35 @@
 <style>
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
   img {
     display: block;
     width: 75px;
+    margin-right: 12px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--font-family-sans);
   }
 
   @media screen and (max-width: 520px) {
     img {
       display: none;
     }
+
+    .logo-text {
+      margin-left: 12px;
+    }
   }
 </style>
 
 <a href="/">
   <img alt="Blog Logo" src="/assets/logo.png" width="75" height="50" />
+  <span class="logo-text">Hello SAP</span>
 </a>

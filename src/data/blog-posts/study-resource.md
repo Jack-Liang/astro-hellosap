@@ -2,7 +2,7 @@
 title: SAP 学习资源 👋
 slug: study-resource
 publishDate: 27 Jan 2026
-description: SAP学习资源共享链接
+description: SAP学习资源下载链接
 ---
 ![casual-life-3d-workspace](/assets/blog/casual-life-3d-workspace.png)
 
