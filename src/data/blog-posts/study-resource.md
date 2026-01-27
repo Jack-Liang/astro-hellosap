@@ -15,3 +15,4 @@ description: SAP学习资源下载链接
 - [SAP教程 S4资料](https://pan.baidu.com/s/1NwsCLlCaMTYL4eHXFjG1xA?pwd=vwuh)
 - [Deliverable for Phase1-项目准备等5个文件](https://pan.baidu.com/s/1lVUqSWHjm1okKcCDLgKxzQ?pwd=tsu6)
 - [后勤WM等2个文件](https://pan.baidu.com/s/1WeThCc15hjpQpLP7fft-SQ?pwd=farw)
+- [SAPGui安装包](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9) win默认装尾号342程序，详阅README文件

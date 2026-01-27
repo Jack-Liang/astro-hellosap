@@ -7,38 +7,27 @@ description: 平台仅限 SAP 学习与实践，禁止商用及违规操作；�
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.png)
 
----
-<!-- <img src="/assets/blog/casual-life-3d-girl-boy-poses.webp" alt="Not so wide" style="float: left" /> -->
-
-<div style="margin: 20px 0; text-align: left;">
-  <a href="/blog/study-resource" style="
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">
-    跳转学习资源
-  </a>
-</div>
-
 <div style="position: absolute; top: 20px; right: 20px; text-align: center;">
   <img src="/assets/weGroup.png" alt="微信群二维码" style="width: 150px;" />
   <p style="margin-top: 4px; font-size: 12px; color: #666;">扫码加群一起交流</p>
+  <div style="margin: 16px 0 0; text-align: center;">
+    <a href="/blog/study-resource" style="
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    " onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">
+      下载学习资源
+    </a>
+  </div>
 </div>
-<!-- <div class="wechat-container">
-    <a href="https://2048.kiksoft.net/"><img src="/assets/weGroup.png" alt="微信群二维码" class="wechat-img"></a>
-    <p class="wechat-caption">扫码加群一起交流</p>
-</div> -->
 
-
-
----
 
 欢迎使用本系统！
 
