@@ -26,8 +26,17 @@ const permalink = Astro.site.href;
       </p>
     </div>
   </div>
-      本网站不支持IE浏览器。
-      <pr>若您在SAPGUI中访问或显示异常，请<a href="/blog/change-sapgui-browser-control/" rel="noopener">查看修改设置</a>。
+  <div id="ie-warning" style="display: none; margin: 2em 0; padding: 1em; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px;">
+    <p>本网站不支持IE浏览器。</p>
+    <p>若您在SAPGUI中访问或显示异常，请<a href="/blog/change-sapgui-browser-control/" rel="noopener">查看修改设置</a>。</p>
+  </div>
+  <script>
+    // 检测IE浏览器
+    var isIE = /MSIE|Trident/.test(navigator.userAgent);
+    if (isIE) {
+      document.getElementById('ie-warning').style.display = 'block';
+    }
+  </script>
 </BaseLayout>
 
 <style>
