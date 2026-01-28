@@ -8,7 +8,7 @@ description: 平台仅限 SAP 学习与实践，禁止商用及违规操作；�
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.png)
 
 <div style="position: absolute; top: 20px; right: 20px; text-align: center;">
-  <img src="/assets/weGroup.png" alt="微信群二维码" style="width: 150px;" />
+  <img src="https://i.kiksoft.net/weGroup.png" alt="微信群二维码" style="width: 150px;" />
   <p style="margin-top: 4px; font-size: 12px; color: #666;">扫码加群一起交流</p>
   <div style="margin: 16px 0 0; text-align: center;">
     <a href="/blog/study-resource" style="
