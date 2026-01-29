@@ -2,9 +2,9 @@
 title: SAP 学习资源 👋
 slug: study-resource
 publishDate: 27 Jan 2026
-description: SAP学习资源下载链接
+description: SAPGUI安装包、学习视频和文档下载链接
 ---
-![casual-life-3d-workspace](/assets/blog/casual-life-3d-workspace.png)
+![casual-life-3d-workspace](https://i.kiksoft.net/blog/casual-life-3d-workspace.png)
 
 ## SAPGui安装包
 - [SAPGui安装包](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9)，Windows系统默认装尾号342的程序，详阅链接中的README文件

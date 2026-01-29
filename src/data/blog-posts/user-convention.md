@@ -2,7 +2,7 @@
 title: 用户公约📜 
 slug: user-convention
 publishDate: 27 Jan 2026
-description: 平台仅限 SAP 学习与实践，禁止商用及违规操作；请妥善保管账号、勿上传敏感数据，并尊重知识产权。
+description: 和用户约定平台使用规范，包含数据安全、操作规范等条款。
 ---
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.png)

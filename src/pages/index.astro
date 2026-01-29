@@ -10,7 +10,11 @@ const permalink = Astro.site.href;
   <div class="home-container">
     <div class="home-copy">
       <h1>欢迎访问SAP学习中心</h1>
-      <p><a href="/blog/" rel="noopener">点击浏览最近更新的内容。</a></p>
+      <div style="margin: 1em 0;">
+        <a href="/blog/" rel="noopener" style="display: inline-block; padding: 12px 24px; background-color: #548e9b; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background-color 0.3s ease;">
+          查看更多的内容
+        </a>
+      </div>
     </div>
 
     <div class="hero-image-container">
@@ -26,9 +30,10 @@ const permalink = Astro.site.href;
       </p>
     </div>
   </div>
+
   <div id="ie-warning" style="display: none; margin: 2em 0; padding: 1em; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px;">
     <p>本网站不支持IE浏览器。</p>
-    <p>若您在SAPGUI中访问或显示异常，请<a href="/blog/change-sapgui-browser-control/" rel="noopener">查看修改设置</a>。</p>
+    <p><a href="/blog/change-sapgui-browser-control/" rel="noopener">若您在SAPGUI中访问或显示异常，请查看修改设置。</a>。</p>
   </div>
   <script>
     // 检测IE浏览器
