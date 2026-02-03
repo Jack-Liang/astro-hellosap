@@ -57,4 +57,4 @@ description: 和用户约定平台使用规范，包含数据安全、操作规�
 管理员联系邮箱：admin@sapehr.cn
  
 ---
-🚀若您在SAPGUI中访问或显示异常，请<a href="/blog/change-sapgui-browser-control/" rel="noopener">查看修改设置</a>。
+<a href="/blog/change-sapgui-browser-control/" rel="noopener">🚀若您在SAPGUI中访问本页面时显示异常，请查看修改设置</a>。

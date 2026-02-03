@@ -81,3 +81,5 @@ SAP GUI 有三个版本，比较常用的是 SAP GUI for Windows，这是多年�
 
 - [SAP R/3系统的R和3分别代表什么含义，负载均衡的实现原理 - 知乎](https://zhuanlan.zhihu.com/p/56472584)
 
+- [SAP GUI for Windows 8.0 下载地址](https://aancos.com/2023/02/08/sap-gui-for-windows-8-00/)
+
