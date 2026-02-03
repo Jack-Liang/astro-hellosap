@@ -24,4 +24,11 @@ description: SAPGUI安装包、学习视频和文档下载链接
 - [后勤WM等2个文件](https://pan.baidu.com/s/1WeThCc15hjpQpLP7fft-SQ?pwd=farw)
 - [更多SAP教程-200+G](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)
 
+## 网站
+- [SAP Learning](https://learning.sap.com/)：SAP 提供的学习平台，里面有一些免费课程，还有一些SAP认证相关的课程。
+- [SAP 试用下载](https://www.sap.com/products/try-sap/trials-downloads.html)：SAP官方提供的一些试用产品
+- [SAP 试用 Cockpit](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial)： SAP官方BTP试用平台
+- [ABAP Git](https://docs.abapgit.org/)：一款基于 ABAP 的 Git 开发平台，提供了 ABAP 开发的版本控制和协作功能。[使用说明](https://zhuanlan.zhihu.com/p/20034587426)
+- [DotABAP](https://dotabap.org/)：ABAP 开源仓库，提供了一些常用的 ABAP 工具包。
+
 
