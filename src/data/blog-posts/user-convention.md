@@ -8,8 +8,12 @@ description: 和用户约定平台使用规范，包含数据安全、操作规�
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.png)
 
 <div style="position: absolute; top: 20px; right: 20px; text-align: center;">
-  <img src="https://i.kiksoft.net/weGroup.png" alt="微信群二维码" style="width: 150px;" />
+  <img id="qrcode-img" src="https://i.kiksoft.net/weGroup.png" alt="微信群二维码" style="width: 150px;" />
   <p style="margin-top: 4px; font-size: 12px; color: #666;">扫码加群一起交流</p>
+  <script>
+    // 添加时间戳确保图片每次都实时加载
+    document.getElementById('qrcode-img').src = 'https://i.kiksoft.net/weGroup.png?timestamp=' + Date.now();
+  </script>
   <div style="margin: 16px 0 0; text-align: center;">
     <a href="/blog/study-resource" style="
       display: inline-block;
