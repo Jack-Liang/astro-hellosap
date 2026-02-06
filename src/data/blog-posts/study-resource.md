@@ -8,6 +8,17 @@ description: SAPGUI安装包、学习视频和文档下载链接
 
 ## SAPGui安装包
 - [SAPGui安装包](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9)，Windows系统默认装尾号342的程序，详阅链接中的README文件
+
+    选择自己的操作系统对应的版本，<span style="color:red;">**只需要下载一个安装包**</span>就行了，历史版本里的比较旧，一般不需要。
+    ![区分操作系统](https://i.kiksoft.net/blog/study-resource/p1.png)
+
+    例如，Windows操作系统对应的安装包如下：
+    ![Windows系统安装包](https://i.kiksoft.net/blog/study-resource/p2.png)
+
+    Mac系统区分 Apple M 系列芯片（下图1）和 Intel 芯片（下图2），分别对应不同的安装包。
+    ![Mac系统安装包](https://i.kiksoft.net/blog/study-resource/p3.png)
+    ![Mac系统安装包](https://i.kiksoft.net/blog/study-resource/p4.png)
+
 - [SAPGui安装和配置说明](/blog/installation-and-configuration-SAPGUI)
 
 
@@ -22,7 +33,7 @@ description: SAPGUI安装包、学习视频和文档下载链接
 - [SAP教程 S4资料](https://pan.baidu.com/s/1NwsCLlCaMTYL4eHXFjG1xA?pwd=vwuh)
 - [Deliverable for Phase1-项目准备等5个文件](https://pan.baidu.com/s/1lVUqSWHjm1okKcCDLgKxzQ?pwd=tsu6)
 - [后勤WM等2个文件](https://pan.baidu.com/s/1WeThCc15hjpQpLP7fft-SQ?pwd=farw)
-- [更多SAP教程-200+G](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)
+- **[更多SAP教程-200+G](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)**
 
 ## 网站
 - [SAP Learning](https://learning.sap.com/)：SAP 提供的学习平台，里面有一些免费课程，还有一些SAP认证相关的课程。
