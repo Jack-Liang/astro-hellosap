@@ -10,12 +10,5 @@
       "binding": "IMAGE_BUCKET",
       "bucket_name": "hellosap"
     }
-  ],
-  "routes": [
-    {
-      "pattern": "example.com/*",
-      "zone_id": "",
-      "kind": "dns"
-    }
   ]
 }
