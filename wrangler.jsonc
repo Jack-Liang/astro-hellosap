@@ -1,13 +1,21 @@
 {
   "name": "astro-hellosap", 
   "compatibility_date": "2026-01-27",
+  "main": "worker.js",
   "assets": {
     "directory": "./dist"
   },
   "r2_buckets": [
     {
-      "binding": "IMAGE_BUCKET", // Worker 中访问存储桶的变量名（需符合 JS 变量规则）
-      "bucket_name": "hellosap" // 你的 R2 存储桶名称（必填）
+      "binding": "IMAGE_BUCKET",
+      "bucket_name": "hellosap"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "example.com/*",
+      "zone_id": "",
+      "kind": "dns"
     }
   ]
 }
