@@ -4,11 +4,11 @@ slug: course-recommend
 publishDate: 3 Feb 2026
 description: 推荐一些好的课程，帮助你学习SAP相关知识。
 ---
-![Udemy首页](https://i.kiksoft.net/blog/course-recommend/undemy_home.png)
+![Udemy首页](https://i.kiksoft.net/blog/course-recommend/undemy_home.jpg)
 
 此前的文章里分享了一些SAP相关的[学习课程](/blog/study-resource)，但年代比较久远，虽然能帮助大家学习SAP，但也存在系统较旧、资料落后、视频模糊等问题。
 
-本文推荐一些更新的课程，帮助你学习SAP相关知识。
+[Udemy](https://www.udemy.com/) 是一个非常好的学习平台，它提供了许多好的课程，帮助你学习SAP相关知识。下面来分享一些我推荐的课程。
 
 ## 入门课程
 
