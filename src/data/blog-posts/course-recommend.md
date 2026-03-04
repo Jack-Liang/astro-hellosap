@@ -4,6 +4,8 @@ slug: course-recommend
 publishDate: 3 Feb 2026
 description: 推荐一些好的课程，帮助你学习SAP相关知识。
 ---
+![Udemy首页](https://i.kiksoft.net/blog/course-recommend/undemy_home.png)
+
 此前的文章里分享了一些SAP相关的[学习课程](/blog/study-resource)，但年代比较久远，虽然能帮助大家学习SAP，但也存在系统较旧、资料落后、视频模糊等问题。
 
 本文推荐一些更新的课程，帮助你学习SAP相关知识。
@@ -43,4 +45,6 @@ description: 推荐一些好的课程，帮助你学习SAP相关知识。
     本课程将着重介绍总账会计。这门课程旨在为您提供深入的知识和实践技能，以便您能够有效地使用SAP S/4HANA FICO模块管理总账流程。
 
 ---
-如果您有更多问题或资源，欢迎分享，我的邮箱是admin@sapehr.cn。
+更多课程请访问[Udemy官网](https://www.udemy.com/)，您可以自行订阅。
+
+当然您也可以向管理员咨询。

@@ -3,6 +3,7 @@ title: '重要通知'
 slug: notice
 publishDate: 9 Feb 2026
 description: 重要通知，请务必查看。
+hidden: true
 ---
 
 ## 由于虚拟机系统异常，导致部分用户数据丢失，如果您的账号无法登陆，请联系管理员。
