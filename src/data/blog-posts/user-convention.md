@@ -4,6 +4,13 @@ slug: user-convention
 publishDate: 27 Jan 2026
 description: 和用户约定平台使用规范，包含数据安全、操作规范等条款。
 ---
+<div style="margin: 2em 0; padding: 1.5em; background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%); border: 4px solid #ff9800; border-radius: 12px; box-shadow: 0 4px 16px rgba(255, 152, 0, 0.4); position: relative; cursor: pointer;" onclick="window.location.href='/blog/welcome-HANA2025/'">
+  <div style="position: absolute; top: -12px; left: 20px; background: #ff9800; color: white; padding: 4px 16px; border-radius: 20px; font-size: 14px; font-weight: bold;">⚠️ 重要通知</div>
+  <input type="text" value="📃/blog/welcome-HANA2025/" style="width: 100%; padding: 14px 18px; border: 3px solid #ff9800; border-radius: 8px; font-family: monospace; font-size: 18px; font-weight: bold; background-color: white; pointer-events: none; margin-top: 12px;" readonly>
+  <p style="margin-top: 12px; font-size: 16px; color: #e65100; text-align: center; font-weight: bold;">🔔S/4 HANA 2025 要上线了，快来看看</p>
+</div>
+
+---
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.png)
 
