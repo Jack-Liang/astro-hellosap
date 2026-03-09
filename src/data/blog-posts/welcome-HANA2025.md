@@ -2,7 +2,7 @@
 title: '欢迎来到 S/4 2025'
 slug: welcome-HANA2025
 publishDate: 5 Mar 2026
-description: 欢迎来到HANA2025，我们将在2025年2月10日开始。
+description: S/4 HANA 2025是最新版的SAP系统，我们将在2026年3月16日为您奉上，快来瞧瞧吧。
 ---
 
 ![](https://i.kiksoft.net/blog/welcome-HANA2025/man-computer.jpg)
