@@ -140,7 +140,7 @@ hr {
 code {
   font-family: 'SF Mono', menlo, inconsolata, monospace;
   font-size: calc(1em - 2px);
-  color: #555;
+  color: #63dd3e;
   padding: 0.2em 0.4em;
   border-radius: 2px;
   -webkit-font-smoothing: antialiased;
@@ -148,9 +148,26 @@ code {
 }
 
 pre {
+  position: relative;
   border-radius: 8px !important;
   margin: 1.2em 0 !important;
   padding: 1.2em;
+  padding-top: 3em !important;
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff5f56;
+  box-shadow: 
+    20px 0 0 #ffbd2e,
+    40px 0 0 #27c93f;
+  z-index: 1;
 }
 
 pre code {
