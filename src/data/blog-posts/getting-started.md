@@ -5,32 +5,38 @@ publishDate: 15 Apr 2026
 description: 欢迎使用我们的SAP系统，本文将带领你快速上手SAP。
 hidden: true
 ---
+![雨林背景](https://i.kiksoft.net/blog/start/rainforest.jpg)
 
-![](https://assets.website-files.com/5da6261a45eff13329fdd324/5da6272f2b9e58113e304a45_bottom-characters.svg)
+<img src="https://i.kiksoft.net/weGroup.png?timestamp=1776222874777" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
 
-## 保持联系
+感谢选择我们的系统。
 
-<img src="https://i.kiksoft.net/weGroup.png?timestamp=1776222874777" alt="SAP 用户交流群" style="width: 75%; display: block; margin: 0 auto;">
+本页面包含**系统配置、客户端下载、资源分享、常见问题**等内容，使用之前请仔细阅读，如有疑问请**加群**咨询。
 
-**请务必加群：** 以便及时接收通知、交流问题。
+<span style="color: green;">请务必加群，以便及时接收通知、交流问题。</span> 
+
+
+
 
 ---
 
-## SAP客户端下载与安装
-
-- [企业微盘下载链接](https://drive.weixin.qq.com/s?k=AEUA1gfAAGEsPFnnAG) ，请根据自己的操作系统选择对应的安装包，不需要全部下载。
-
-- [安装与配置说明文档](/blog/installation-and-configuration-SAPGUI) 
-
-- [安装与配置视频演示](https://www.bilibili.com/video/BV1CNDyBsEaF/) 
-
 ## 客户端配置参数
+
+下面是SAP客户端的配置参数，如未安装SAP客户端请看下一节。
 
 ```
 服务器	s5.sapehr.cn
 实例号	00
 系统标识	S4H
 ```
+
+## SAP客户端下载与安装
+
+- [从企业微盘下载SAP客户端](https://drive.weixin.qq.com/s?k=AEUA1gfAAGEsPFnnAG) ，选择操作系统对应的安装包即可。
+
+- [安装与配置说明文档](/blog/installation-and-configuration-SAPGUI) 
+
+- [安装与配置视频演示](https://www.bilibili.com/video/BV1CNDyBsEaF/) 
 
 ### 示例：
 
@@ -51,13 +57,14 @@ conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
 
 保存后双击连接即可登录，Client（集团）：100。
 
-首次登录SAP系统要修改初始密码，并妥善保存。
+首次登录SAP系统会要求修改初始密码，请妥善保存新密码。
 
 密码长度不少于 8 位，包含英文大小写及数字，后续请用新密码登录。
 
 ---
 
 ## 资源分享
+
 - [SAP 学习资源: 免费教程分享](/blog/study-resource) 
 - [SAP业务/开发课程精选](/blog/good-courses)
 
@@ -77,7 +84,7 @@ conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
 
 <details>
 <summary><strong>系统连不上，并且通过浏览器访问域名报 502错误</strong></summary>
-<p>SAP服务器可能停机或断网了，请联系管理员，或者稍后再试。</p>
+<p>SAP服务器可能停机或断网了，请及时关注群消息，管理员会在第一时间通报系统状态，或者稍后再试。</p>
 </details>
 
 <details>
@@ -90,7 +97,7 @@ conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
 <p>输入记忆要在高速连接时方可使用，请检查连接配置中网络页签。</p>
 </details>
 
-
+![](https://assets.website-files.com/5da6261a45eff13329fdd324/5da6272f2b9e58113e304a45_bottom-characters.svg)
 
 <style>
 details {
