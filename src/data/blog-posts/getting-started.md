@@ -21,17 +21,26 @@ hidden: true
 
 本页面包含**SAP 系统配置参数、客户端下载、资源分享、常见问题**等，使用之前请：
 
-1. 请仔细阅读全文
+1. 请仔细阅读**全文**
 2. 请务必加群
 
 <span style="color: green;">请务必加群，以便及时接收通知、交流问题。</span> 
 
 ---
+## 目录
 
+- [客户端配置参数](#客户端配置参数)
+- [SAP客户端下载与安装](#sap客户端下载与安装)
+  - [配置示例](#配置示例)
+  - [客户端下载](#客户端下载)
+- [资源分享](#资源分享)
+- [常见问题](#常见问题)
+
+
+---
 ## 客户端配置参数
 
-下面是SAP客户端的配置参数，如未安装SAP客户端请看下一节。
-
+SAP客户端的配置参数如下，**[下载SAP客户端](#客户端下载)** 请看后续章节。
 ```
 服务器	s5.sapehr.cn
 实例号	00
@@ -40,24 +49,20 @@ hidden: true
 
 ## SAP客户端下载与安装
 
-- [从企业微盘下载SAP客户端](https://drive.weixin.qq.com/s?k=AEUA1gfAAGEsPFnnAG) ，选择操作系统对应的安装包即可。
-
-- [安装与配置说明文档](/blog/installation-and-configuration-SAPGUI) 
-
-- [安装与配置视频演示](https://www.bilibili.com/video/BV1CNDyBsEaF/) 
-
-### 示例：
+### 配置示例
 
 - Windows：
-![Windows 配置示例](https://i.kiksoft.net/blog/start/gui-config-win.png)
+
+  <img src="https://i.kiksoft.net/blog/start/gui-config-win.png" alt="Windows 配置示例" style="width: 75%;">
 
 - 其他系统(macOS/Linux 等使用 javagui)：
-![javagui 配置示例](https://i.kiksoft.net/blog/start/gui-config-javagui.png)
+
+  <img src="https://i.kiksoft.net/blog/start/gui-config-javagui.png" alt="javagui 配置示例" style="width: 75%;">
 
 ```bash
 conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh
 ```
-- 或者，包含登录用户名（请修改用户名为自己的用户名）：
+  - 或者，包含登录用户名（请修改用户名为自己的用户名）：
 ```bash
 conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
 ```
@@ -68,6 +73,15 @@ conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
 首次登录SAP系统会要求修改初始密码，请妥善保存新密码。
 
 密码长度不少于 8 位，包含英文大小写及数字，后续请用新密码登录。
+
+---
+
+### 客户端下载
+- [从企业微盘下载SAP客户端](https://drive.weixin.qq.com/s?k=AEUA1gfAAGEsPFnnAG) ，选择操作系统对应的安装包即可。
+
+- [安装与配置说明文档](/blog/installation-and-configuration-SAPGUI) 
+
+- [安装与配置视频演示](https://www.bilibili.com/video/BV1CNDyBsEaF/) 
 
 ---
 
