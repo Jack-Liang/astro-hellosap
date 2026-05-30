@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props
-const { title, slug, description, publishDate } = post.data;
+const { title, slug, description, publishDate, tags } = post.data;
 const readingTimeEstimate = readingTime(post.body).text
 const permalink = `${Astro.site.href}blog/${slug}`;
 const { Content } = await render(post)
@@ -23,6 +23,16 @@ const { Content } = await render(post)
   <header>
     <p>{publishDate} ~ {readingTimeEstimate}</p>
     <h1>{title}</h1>
+    {tags && tags.length > 0 && (
+      <div class="tags-wrapper">
+        <div class="tags-inner" id="post-tags">
+          {tags.map(tag => (
+            <span class="post-tag">{tag}</span>
+          ))}
+        </div>
+        <button class="tags-toggle" id="tags-toggle" style="display: none;"><span class="toggle-text">展开</span><span class="toggle-arrow">▼</span></button>
+      </div>
+    )}
     <hr />
   </header>
   <div class="container">
@@ -54,4 +64,121 @@ const { Content } = await render(post)
     min-width: 100px;
     width: 30%;
   }
+
+  .post-tags {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .post-tag {
+    padding: 5px 14px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  :global(.theme-dark) .post-tag {
+    background: #3a3a3a;
+  }
+
+  .tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  .tags-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .tags-inner.collapsed {
+    max-height: 60px;
+    overflow: hidden;
+  }
+
+  .tags-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: none;
+    background: var(--text-secondary);
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+  }
+
+  .tags-toggle:hover {
+    background: var(--primary-color);
+  }
+
+  .tags-toggle .toggle-text {
+    pointer-events: none;
+  }
+
+  .tags-toggle .toggle-arrow {
+    pointer-events: none;
+    font-size: 10px;
+  }
 </style>
+
+<script is:inline>
+  function initTagsToggle() {
+    const postTags = document.getElementById('post-tags');
+    const tagsToggle = document.getElementById('tags-toggle');
+    
+    if (!postTags) return;
+    
+    const checkTagsOverflow = function() {
+      if (postTags && tagsToggle) {
+        const tagsHeight = postTags.offsetHeight;
+        const lineHeight = 40;
+        const maxLines = 2;
+        
+        if (tagsHeight > lineHeight * maxLines) {
+          tagsToggle.style.display = 'inline-flex';
+          postTags.classList.add('collapsed');
+          tagsToggle.querySelector('.toggle-text').textContent = '展开';
+          tagsToggle.querySelector('.toggle-arrow').textContent = '▼';
+        } else {
+          tagsToggle.style.display = 'none';
+          postTags.classList.remove('collapsed');
+        }
+      }
+    };
+    
+    if (tagsToggle) {
+      tagsToggle.addEventListener('click', function() {
+        const isCollapsed = postTags.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+          postTags.classList.remove('collapsed');
+          tagsToggle.querySelector('.toggle-text').textContent = '收起';
+          tagsToggle.querySelector('.toggle-arrow').textContent = '▲';
+        } else {
+          postTags.classList.add('collapsed');
+          tagsToggle.querySelector('.toggle-text').textContent = '展开';
+          tagsToggle.querySelector('.toggle-arrow').textContent = '▼';
+        }
+      });
+    }
+    
+    window.addEventListener('resize', checkTagsOverflow);
+    setTimeout(checkTagsOverflow, 100);
+  }
+  
+  initTagsToggle();
+  document.addEventListener('astro:page-load', initTagsToggle);
+</script>

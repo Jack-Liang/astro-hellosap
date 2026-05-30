@@ -4,6 +4,7 @@ slug: user-convention
 publishDate: 27 Jan 2026
 description: 和用户约定平台使用规范，包含数据安全、操作规范等条款。
 hidden: true
+tags: ['公约', '规范', '入门']
 ---
 <!-- <div style="margin: 2em 0; padding: 1.5em; background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%); border: 4px solid #ff9800; border-radius: 12px; box-shadow: 0 4px 16px rgba(255, 152, 0, 0.4); position: relative; cursor: pointer;" onclick="window.location.href='/blog/welcome-HANA2025/'">
   <div style="position: absolute; top: -12px; left: 20px; background: #ff9800; color: white; padding: 4px 16px; border-radius: 20px; font-size: 14px; font-weight: bold;">⚠️ 重要通知</div>

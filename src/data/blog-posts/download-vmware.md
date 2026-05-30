@@ -3,6 +3,7 @@ title: 从官网下载 VMware 软件
 slug: download-vmware
 publishDate: 29 Jan 2026
 description: 从官网下载最新版的 VMware 软件的手册
+tags: ['VMware', '工具', '下载']
 ---
 
 自从博通收购 VMware 之后，就取消有了付费购买 VMware，我们可以免费从官网下载最新版的 VMware 软件。

@@ -4,6 +4,7 @@ slug: start
 publishDate: 15 Apr 2026
 description: 欢迎使用我们的SAP系统，本文将带领你快速上手SAP。
 hidden: true
+tags: ['入门', '配置', '安装']
 ---
 ![雨林背景](https://i.kiksoft.net/blog/start/rainforest.jpg)
 

@@ -3,6 +3,7 @@ title: 修改 SAP GUI 浏览器控制
 slug: change-sapgui-browser-control
 publishDate: 27 Jan 2026
 description: 修改 SAP GUI 浏览器控制，方便更好的显示网页内容
+tags: ['SAP GUI', '配置', '浏览器']
 ---
 
 如果你在 SAPGUI 访问一些网站，出现了显示异常的问题，例如图片无法显示，视频无法播放，排版混乱等，这可能是由于SAPGUI的浏览器使用了过时的 IE 浏览器框架导致的。

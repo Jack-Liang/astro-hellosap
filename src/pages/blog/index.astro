@@ -9,30 +9,143 @@ const permalink = `${Astro.site.href}blog`;
 let allPosts = await getCollection('posts')
 allPosts = allPosts.filter(post => !post.data.hidden)
 allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+
+const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sort();
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="blog">
   <div class="container">
     <h1>文章列表</h1>
-    {allPosts.map((post, index) => {
-      const href = `/blog/${post.data.slug}`;
-      return (
-        <div>
-          { index !== 0 && <hr /> }
-          <div class="post-item">
-            <h2>
-              <a href={href}>{post.data.title}</a>
-            </h2>
-            <p>{post.data.description}</p>
-            <div class="post-item-footer">
-              <span class="post-item-date">— {post.data.publishDate}</span>
+    
+    <div class="tags-filter">
+      <span class="filter-label">标签筛选：</span>
+      <div class="tags-wrapper">
+        <div class="tags-inner" id="filter-tags">
+          <button class="tag-btn active" data-tag="">全部</button>
+          {allTags.map(tag => (
+            <button class="tag-btn" data-tag={tag}>{tag}</button>
+          ))}
+        </div>
+        <button class="tags-toggle" id="filter-tags-toggle" style="display: none;"><span class="toggle-text">展开</span><span class="toggle-arrow">▼</span></button>
+      </div>
+    </div>
+
+    <div id="posts-container">
+      {allPosts.map((post, index) => {
+        const href = `/blog/${post.data.slug}`;
+        return (
+          <div class="post-item-wrapper" data-tags={JSON.stringify(post.data.tags || [])}>
+            { index !== 0 && <hr /> }
+            <div class="post-item">
+              <h2>
+                <a href={href}>{post.data.title}</a>
+              </h2>
+              <p>{post.data.description}</p>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <div class="post-tags">
+                  {post.data.tags.map(tag => (
+                    <span class="post-tag">{tag}</span>
+                  ))}
+                </div>
+              )}
+              <div class="post-item-footer">
+                <span class="post-item-date">— {post.data.publishDate}</span>
+              </div>
             </div>
           </div>
-        </div>
-      )
-    })}
+        )
+      })}
+    </div>
   </div>
 </BaseLayout>
+
+<script is:inline>
+  function initTagFilter() {
+    const tagBtns = document.querySelectorAll('.tag-btn');
+    const postWrappers = document.querySelectorAll('.post-item-wrapper');
+    const filterTags = document.getElementById('filter-tags');
+    const filterToggle = document.getElementById('filter-tags-toggle');
+    
+    if (!tagBtns.length) return;
+    
+    const checkTagsOverflow = function() {
+      if (filterTags && filterToggle) {
+        const tagsHeight = filterTags.offsetHeight;
+        const lineHeight = 38;
+        const maxLines = 2;
+        const threshold = lineHeight * maxLines;
+        
+        if (tagsHeight > threshold) {
+          filterToggle.style.display = 'flex';
+          filterTags.classList.add('collapsed');
+          filterToggle.querySelector('.toggle-text').textContent = '展开';
+          filterToggle.querySelector('.toggle-arrow').textContent = '▼';
+        } else {
+          filterToggle.style.display = 'none';
+          filterTags.classList.remove('collapsed');
+        }
+      }
+    };
+    
+    if (filterToggle) {
+      filterToggle.addEventListener('click', function() {
+        const isCollapsed = filterTags.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+          filterTags.classList.remove('collapsed');
+          filterToggle.querySelector('.toggle-text').textContent = '收起';
+          filterToggle.querySelector('.toggle-arrow').textContent = '▲';
+        } else {
+          filterTags.classList.add('collapsed');
+          filterToggle.querySelector('.toggle-text').textContent = '展开';
+          filterToggle.querySelector('.toggle-arrow').textContent = '▼';
+        }
+      });
+    }
+    
+    window.addEventListener('resize', checkTagsOverflow);
+    
+    tagBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const selectedTag = btn.getAttribute('data-tag');
+        
+        tagBtns.forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        
+        let visibleCount = 0;
+        postWrappers.forEach(function(wrapper) {
+          const tagsAttr = wrapper.getAttribute('data-tags');
+          const tags = tagsAttr ? JSON.parse(tagsAttr) : [];
+          const shouldShow = selectedTag === '' || tags.includes(selectedTag);
+          
+          if (shouldShow) {
+            wrapper.style.display = 'block';
+            const hr = wrapper.querySelector('hr');
+            if (hr) {
+              hr.style.display = visibleCount === 0 ? 'none' : 'block';
+            }
+            visibleCount++;
+          } else {
+            wrapper.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        checkTagsOverflow();
+        setTimeout(checkTagsOverflow, 500);
+        setTimeout(checkTagsOverflow, 1000);
+      });
+    });
+  }
+  
+  initTagFilter();
+  document.addEventListener('astro:page-load', initTagFilter);
+</script>
 
 <style>
   h2,
@@ -50,5 +163,105 @@ allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new 
 
   hr {
     margin: 60px auto;
+  }
+
+  .tags-filter {
+    margin: 20px 0 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .filter-label {
+    font-weight: 600;
+    color: var(--text-main);
+    flex-shrink: 0;
+  }
+
+  .tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tags-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tags-inner.collapsed {
+    max-height: 60px;
+    overflow: hidden;
+  }
+
+  .tags-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: none;
+    background: var(--text-secondary);
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .tags-toggle:hover {
+    background: var(--primary-color);
+  }
+
+  .tags-toggle .toggle-text {
+    pointer-events: none;
+  }
+
+  .tags-toggle .toggle-arrow {
+    pointer-events: none;
+    font-size: 10px;
+  }
+
+  .tag-btn {
+    padding: 6px 16px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .tag-btn:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+
+  .tag-btn.active {
+    background: var(--primary-color);
+    color: white;
+  }
+
+  .post-tags {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .post-tag {
+    padding: 3px 10px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  :global(.theme-dark) .post-tag {
+    background: #3a3a3a;
   }
 </style>

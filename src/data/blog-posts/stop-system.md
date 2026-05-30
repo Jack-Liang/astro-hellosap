@@ -4,6 +4,7 @@ slug: stop-system
 publishDate: 6 May 2026
 description: 停止系统服务的通知及后续处理
 hidden: true
+tags: ['通知', '系统维护']
 ---
 ![SAP系统停机通知](https://i.kiksoft.net/blog/stop-system/stop-system.jpg)
 

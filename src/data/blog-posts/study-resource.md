@@ -3,6 +3,7 @@ title: SAP 学习资源 👋
 slug: study-resource
 publishDate: 27 Jan 2026
 description: SAPGUI安装包、学习视频和文档下载链接
+tags: ['资源', '学习', '教程']
 ---
 ![casual-life-3d-workspace](https://i.kiksoft.net/blog/casual-life-3d-workspace.png)
 

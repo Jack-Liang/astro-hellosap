@@ -3,6 +3,7 @@ title: 知乎专栏 | SAP ABAP 开发历史文章
 slug: zhihu-column-summary
 publishDate: 27 Apr 2026
 description: 汇总我在知乎专栏发布的 SAP ABAP 开发技巧和技术文档翻译文章
+tags: ['ABAP', '开发', '资源']
 ---
 
 ![cover](https://picx.zhimg.com/70/v2-af8cea05777d8a1eb50669aab1b76aa7_1440w.avis?biz_tag=Post)

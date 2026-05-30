@@ -3,6 +3,7 @@ title: SAP GUI 安装与配置
 slug: installation-and-configuration-SAPGUI
 publishDate: 27 Jan 2026
 description: 安装和配置 SAP GUI 客户端的手册
+tags: ['安装', '配置', 'SAP GUI']
 ---
 
 [SAPGUI安装包下载地址](/blog/study-resource)

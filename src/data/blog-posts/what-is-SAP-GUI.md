@@ -3,6 +3,7 @@ title: 什么是 SAP GUI？SAP 技术架构介绍
 slug: what-is-SAP-GUI
 publishDate: 30 Jan 2026
 description: SAP GUI 是用户与 SAP 后端服务器交互的经典入口，介绍 SAP 三层技术架构
+tags: ['SAP GUI', '架构', '概念']
 ---
 ![image-20260130121327228](https://i.kiksoft.net/blog/what-is-SAP-GUI/image-20260130121327228.png)
 

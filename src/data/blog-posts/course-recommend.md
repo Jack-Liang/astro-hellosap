@@ -3,6 +3,7 @@ title: SAP 课程推荐
 slug: course-recommend
 publishDate: 3 Feb 2026
 description: 推荐一些好的课程，帮助你学习SAP相关知识。
+tags: ['课程', '学习', 'ABAP', 'FICO']
 ---
 ![Udemy首页](https://i.kiksoft.net/blog/course-recommend/undemy_home.jpg)
 

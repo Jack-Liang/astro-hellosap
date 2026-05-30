@@ -31,10 +31,12 @@ const permalink = Astro.site.href;
     </div>
   </div>
 
-  <div style="margin: 2em 0; font-size: 0.01em; color: #666;">
+  <div class="home-bottom-note" style="margin: 2em 0;">
     <p>
-      <img src="/assets/E258_black.png" alt="Mouse cursor" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 4px;">
-      <a href="/blog/change-sapgui-browser-control/" rel="noopener">若您在SAPGUI中访问本页面时显示异常，请修改设置。</a>
+      <a href="/blog/change-sapgui-browser-control/" rel="noopener">
+        <img src="/assets/E258_black.png" alt="Mouse cursor" class="mouse-icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 4px;">
+        若您在SAPGUI中访问本页面时显示异常，请修改设置。
+      </a>
     </p>
   </div>
 
@@ -107,5 +109,27 @@ const permalink = Astro.site.href;
       padding-bottom: 2em;
       text-align: center;
     }
+  }
+
+  .home-bottom-note p {
+    font-size: 1em;
+    color: var(--text-secondary);
+  }
+
+  .home-bottom-note a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .home-bottom-note a:hover {
+    text-decoration: underline;
+  }
+
+  .mouse-icon {
+    display: inline-block;
+  }
+
+  :global(.theme-dark) .mouse-icon {
+    filter: invert(1);
   }
 </style>

@@ -3,6 +3,7 @@ title: SAP业务/开发课程精选
 slug: good-courses
 publishDate: 25 Mar 2026
 description: 最新的SAP课程，高清视频，包含 SAP S/4HANA 财务（FICO）业务流程，UI5 应用开发等，陆续上新中……
+tags: ['课程', '学习', 'UI5', 'Fiori']
 ---
 
 ![Head image](https://i.kiksoft.net/blog/good-courses/Mac-fiori.jpg)
