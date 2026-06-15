@@ -8,7 +8,7 @@ tags: ['入门', '配置', '安装']
 ---
 ![雨林背景](https://i.kiksoft.net/blog/start/rainforest.jpg)
 
-<img id="group-img" src="https://i.kiksoft.net/weGroup.png" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
+<!-- <img id="group-img" src="https://i.kiksoft.net/weGroup.png" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
 <script>
   (function() {
     const img = document.getElementById('group-img');
@@ -16,16 +16,16 @@ tags: ['入门', '配置', '安装']
       img.src = 'https://i.kiksoft.net/weGroup.png?timestamp=' + Date.now();
     }
   })();
-</script>
+</script> -->
 
 感谢选择我们的系统。
 
 本页面包含**SAP 系统配置参数、客户端下载、资源分享、常见问题**等，使用之前请：
 
-1. 请仔细阅读**全文**
-2. 请务必加群
+<!-- 请仔细阅读**全文**，以便在提问时胸有成竹。 -->
+<!-- 2. 请务必加群  -->
 
-<span style="color: green;">请务必加群，以便及时接收通知、交流问题。</span> 
+<span style="color: green;">请仔细阅读**全文**，以便在提问时胸有成竹。</span>
 
 ---
 ## 目录
@@ -56,18 +56,27 @@ SAP客户端的配置参数如下，**[下载SAP客户端](#客户端下载)** �
 
   <img src="https://i.kiksoft.net/blog/start/gui-config-win.png" alt="Windows 配置示例" style="width: 75%;">
 
-- 其他系统(macOS/Linux 等使用 javagui)：
+<details>
 
-  <img src="https://i.kiksoft.net/blog/start/gui-config-javagui.png" alt="javagui 配置示例" style="width: 75%;">
+  <summary><strong>其他系统(macOS/Linux 等使用 javagui)</strong></summary>
 
-```bash
-conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh
-```
-  - 或者，包含登录用户名（请修改用户名为自己的用户名）：
-```bash
-conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
-```
-⚠️ 如果无法保存，请检查 Description 是否填写。
+  - 在 javagui 中点击“新增”图标，填写连接信息：
+
+    <img src="https://i.kiksoft.net/blog/start/gui-config-javagui.png" alt="javagui 配置示例" style="width: 75%;">
+
+      ```bash
+      conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh
+      ```
+    或者，包含登录用户名（请修改用户名为自己的用户名）：
+
+      ```bash
+      conn=/H/s5.sapehr.cn/S/3200&clnt=100&lang=zh&user=用户名
+      ```
+
+  ⚠️ 如果无法保存，请检查 Description 是否填写。
+
+</details>
+
 
 保存后双击连接即可登录，Client（集团）：100。
 
