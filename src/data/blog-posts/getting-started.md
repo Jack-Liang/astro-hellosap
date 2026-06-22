@@ -8,7 +8,7 @@ tags: ['入门', '配置', '安装']
 ---
 ![雨林背景](https://i.kiksoft.net/blog/start/rainforest.jpg)
 
-<!-- <img id="group-img" src="https://i.kiksoft.net/weGroup.png" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
+<img id="group-img" src="https://i.kiksoft.net/weGroup.png" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
 <script>
   (function() {
     const img = document.getElementById('group-img');
@@ -16,16 +16,16 @@ tags: ['入门', '配置', '安装']
       img.src = 'https://i.kiksoft.net/weGroup.png?timestamp=' + Date.now();
     }
   })();
-</script> -->
+</script>
 
 感谢选择我们的系统。
 
-本页面包含**SAP 系统配置参数、客户端下载、资源分享、常见问题**等，使用之前请：
+本页面包含**SAP 系统配置参数、客户端下载、资源分享、常见问题**等，请：
 
-<!-- 请仔细阅读**全文**，以便在提问时胸有成竹。 -->
-<!-- 2. 请务必加群  -->
+1. 请仔细<span style="color: green;">阅读全文</span> ，以便提问时胸有成竹
+2. 请务必加群，以便接收通知
 
-<span style="color: green;">请仔细阅读**全文**，以便在提问时胸有成竹。</span>
+<!-- <span style="color: green;">请仔细阅读**全文**，以便在提问时胸有成竹。</span> -->
 
 ---
 ## 目录
