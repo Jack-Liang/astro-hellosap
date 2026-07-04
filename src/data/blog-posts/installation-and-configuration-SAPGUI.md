@@ -6,7 +6,9 @@ description: 安装和配置 SAP GUI 客户端的手册
 tags: ['安装', '配置', 'SAP GUI']
 ---
 
-[SAPGUI安装包下载地址](/blog/study-resource)
+## [SAPGUI安装包下载地址](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9)
+
+---
 
 # 1. SAPGui安装（windows系统）
 
@@ -47,6 +49,7 @@ tags: ['安装', '配置', 'SAP GUI']
 等待复制完毕，在启动台中就可以看到对应文件夹，点击打开。
 
 ## 连接配置
+SAP 系统的地址在管理员提供的页面中。
 
 ![img](https://i.kiksoft.net/blog/installation-and-configuration-SAPGUI/10fe384a42fb2c4565545b67b76111968b580e80.png) 
 
@@ -56,7 +59,7 @@ tags: ['安装', '配置', 'SAP GUI']
 Conn=/H/<服务器ip或域名>/S/3200
 ```
 
-把 <服务器ip或域名> 替换为你要连接的SAP系统地址（尖括号不要保留），不要忘记填写描述，否则“保存”是灰色的。
+把 `<服务器ip或域名>` **替换**为你要连接的SAP系统地址（尖括号`不要`保留），不要忘记填写`描述`，否则“保存”是灰色的。
 
 ![img](https://i.kiksoft.net/blog/installation-and-configuration-SAPGUI/f1f523386d6cec0a16c743cdf0241c2a924d0171.png) 
 

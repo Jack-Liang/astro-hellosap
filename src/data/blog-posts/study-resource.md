@@ -23,7 +23,6 @@ tags: ['资源', '学习', '教程']
 - [SAPGui安装和配置说明](/blog/installation-and-configuration-SAPGUI)
 
 
-
 ## 教程
 - [EWM培训资料](https://pan.baidu.com/s/1zAQuOgtv2WUMRYsA2PUyYA?pwd=ueem)
 - [SAP教程 FICO模块](https://pan.baidu.com/s/1V_I4AkpZ7lO-A7dXzFEu7w?pwd=iqwk)
@@ -43,4 +42,7 @@ tags: ['资源', '学习', '教程']
 - [ABAP Git](https://docs.abapgit.org/)：一款基于 ABAP 的 Git 开发平台，提供了 ABAP 开发的版本控制和协作功能。[使用说明](https://zhuanlan.zhihu.com/p/20034587426)
 - [DotABAP](https://dotabap.org/)：ABAP 开源仓库，提供了一些常用的 ABAP 工具包。
 
-
+## 课程
+- [SAP业务/开发课程精选](/blog/good-courses)
+- [SAP 课程推荐](/blog/course-recommend)
+    

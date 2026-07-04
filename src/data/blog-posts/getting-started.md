@@ -28,27 +28,33 @@ tags: ['入门', '配置', '安装']
 <!-- <span style="color: green;">请仔细阅读**全文**，以便在提问时胸有成竹。</span> -->
 
 ---
-## 目录
 
-- [客户端配置参数](#客户端配置参数)
-- [SAP客户端下载与安装](#sap客户端下载与安装)
-  - [配置示例](#配置示例)
-  - [客户端下载](#客户端下载)
-- [资源分享](#资源分享)
-- [常见问题](#常见问题)
+本文包含从客户端下载到登录的全部内容、包含视频演示，能帮你顺利完成整个过程。
 
+再次提醒——为节约大家的时间，请仔细阅读本文。
+
+完整完成以下 3 步，即可成功登录SAP系统：
+1. 下载SAP客户端
+2. 安装、配置SAP客户端
+3. 登录SAP系统
 
 ---
-## 客户端配置参数
 
-SAP客户端的配置参数如下，**[下载SAP客户端](#客户端下载)** 请看后续章节。
+
+## 1. 客户端下载
+
+- [下载 SAP 客户端](https://pan.baidu.com/s/1eYbAEXOHHOTd04kSruDu5w?pwd=9ye9)  ，根据操作系统选择对应的安装包。[（备用链接）](https://drive.weixin.qq.com/s?k=AEUA1gfAAGEsPFnnAG)
+- [安装与配置说明文档](/blog/installation-and-configuration-SAPGUI) ：需要配置参数请看[下面章节](#客户端配置参数)。
+- [安装与配置视频演示](https://www.bilibili.com/video/BV1CNDyBsEaF/) 
+
+## 2. 客户端配置参数
+
+SAP客户端的配置参数如下：
 ```
 服务器	s5.sapehr.cn
 实例号	00
 系统标识	S4H
 ```
-
-## SAP客户端下载与安装
 
 ### 配置示例
 
@@ -58,7 +64,7 @@ SAP客户端的配置参数如下，**[下载SAP客户端](#客户端下载)** �
 
 <details>
 
-  <summary><strong>其他系统(macOS/Linux 等使用 javagui)</strong></summary>
+  <summary><strong>点击展开：MacOS/Linux 等使用 javagui</strong></summary>
 
   - 在 javagui 中点击“新增”图标，填写连接信息：
 
@@ -77,32 +83,26 @@ SAP客户端的配置参数如下，**[下载SAP客户端](#客户端下载)** �
 
 </details>
 
+## 3. 登录SAP系统
 
-保存后双击连接即可登录，Client（集团）：100。
+保存好新增的连接后，双击即可登录。
 
-首次登录SAP系统会要求修改初始密码，请妥善保存新密码。
+首次登录SAP系统会要求修改初始密码，请妥善保存新密码，后续请用新密码登录。
 
-密码长度不少于 8 位，包含英文大小写及数字，后续请用新密码登录。
-
----
-
-### 客户端下载
-- [从企业微盘下载SAP客户端](https://drive.weixin.qq.com/s?k=AEUA1gfAAGEsPFnnAG) ，选择操作系统对应的安装包即可。
-
-- [安装与配置说明文档](/blog/installation-and-configuration-SAPGUI) 
-
-- [安装与配置视频演示](https://www.bilibili.com/video/BV1CNDyBsEaF/) 
+密码长度不少于 8 位，包含英文大小写及数字。
 
 ---
 
-## 资源分享
+## 4. 资源分享
 
 - [SAP 学习资源: 免费教程分享](/blog/study-resource) 
 - [SAP业务/开发课程精选](/blog/good-courses)
+- 推荐新手阅读[电子书：由浅入深学习 SAP 财务](https://weread.qq.com/book-detail?type=1&senderVid=11207524&v=0f932af0813abb01cg013b59)第一章，增加对 SAP 的基础理解。
+![电子书目录](https://i.kiksoft.net/blog/start/book-SAP-introduce.jpg)
 
 ---
 
-## 常见问题
+## 5. 常见问题
 
 <details>
 <summary><strong>密码错误：连续三次输入错误，账号被锁定了怎么办？</strong></summary>
