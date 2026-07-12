@@ -19,7 +19,7 @@ hidden: true
 
 本系统仅作为学习与实践 SAP 技术的平台，旨在帮助您提升专业技能。为保障系统稳定运行、维护良好学习环境，请仔细阅读并遵守以下约定：
 
-<img src="https://pexels.kiksoft.net/api/random?orientation=landscape" alt="yellow-metal-design-decoration" width="940" height="325" style="width: 940px; height: 325px; object-fit: cover;">
+<img src="https://pexels.kiksoft.net/api/random?orientation=landscape" alt="yellow-metal-design-decoration" width="940" height="325" style="width: 940px; height: 325px; object-fit: cover; object-position: center;">
 <div style="position: absolute; top: 20px; right: 20px; text-align: center;">
   <img id="qrcode-img" src="https://i.kiksoft.net/weGroup.png" alt="微信群二维码" style="width: 150px;" />
   <p style="margin-top: 4px; font-size: 12px; color: #666;">扫码加群一起交流</p>
