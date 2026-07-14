@@ -1,0 +1,105 @@
+---
+title: Rough Notation 注释效果演示
+slug: notation-test
+publishDate: 14 Jul 2026
+description: 探索 Rough Notation：用手绘风格为你的文章添加动态注释效果
+tags: ['工具', '演示', '前端']
+---
+
+# Rough Notation 注释效果演示
+
+<Notation type="highlight" color="yellow">Rough Notation</Notation> 是一个轻量级的 JavaScript 库，用于在网页上创建手绘风格的注释效果。它基于 <Notation type="underline" color="#548e9b">RoughJS</Notation> 库，能够为你的内容添加独特的视觉吸引力。
+
+## 支持的注释样式
+
+### 1. 下划线 (underline)
+
+用于强调关键词或重要概念。
+
+例如，<Notation type="underline" color="#e74c3c">HTTP/HTTPS</Notation> 是 web 通信的基础协议。
+
+### 2. 方框 (box)
+
+用于定义或框定特定的内容区域。
+
+<Notation type="box" color="#3498db">这是方框注释效果</Notation>，常用于代码示例或术语定义。
+
+### 3. 圆形 (circle)
+
+用于标记或突出显示特定的元素。
+
+<Notation type="circle" color="#27ae60">重要提示</Notation> - 圆形注释适合用于警示或特别需要注意的内容。
+
+### 4. 高亮 (highlight)
+
+模拟荧光笔的标记效果。
+
+<Notation type="highlight" color="#f1c40f">这段文字被高亮显示了</Notation>，就像用荧光笔划过一样。
+
+### 5. 删除线 (strike-through)
+
+用于表示已否定或不推荐的内容。
+
+<Notation type="strike-through" color="#9b59b6">过时的方法</Notation> - 表示不推荐使用的旧方法。
+
+### 6. 划掉 (crossed-off)
+
+用于表示完全否定或错误的内容。
+
+<Notation type="crossed-off" color="#e67e22">错误答案</Notation> - 表示明确错误的选项。
+
+### 7. 括号 (bracket)
+
+用于标记一段文字或整个段落。
+
+<Notation type="bracket" color="#1abc9c">这是括号注释，可以包围多行内容，特别适合用于引用或说明。</Notation>
+
+## 实际应用示例
+
+### 编程概念解释
+
+在 JavaScript 中，<Notation type="box" color="#3498db">`Promise`</Notation> 是处理异步操作的一种方式。当你需要 <Notation type="underline" color="#e74c3c">等待多个请求完成</Notation> 时，可以使用 `Promise.all()`。
+
+### 重要提示
+
+> <Notation type="highlight" color="#f1c40f">注意：Rough Notation 压缩后只有 3.8kb</Notation>，非常轻量，不会影响页面加载性能。
+
+### 颜色和样式自定义
+
+所有注释都支持自定义颜色。你可以使用：
+
+- 十六进制颜色：如 <Notation type="underline" color="#ff6b6b">#ff6b6b</Notation>
+- 颜色名称：如 <Notation type="box" color="tomato">tomato</Notation>
+- RGB 值：如 <Notation type="circle" color="rgb(46, 204, 113)">rgb(46, 204, 113)</Notation>
+
+## 如何使用
+
+在你的 Astro 项目中，使用 `<Notation>` 组件：
+
+```jsx
+<Notation type="underline" color="red">需要强调的文本</Notation>
+```
+
+### 可用参数
+
+| 参数 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `type` | string | `"underline"` | 注释样式 |
+| `color` | string | `"red"` | 颜色值 |
+| `strokeWidth` | number | `1.5` | 线条粗细 |
+
+### 样式选项
+
+- `underline` - 下划线
+- `box` - 方框
+- `circle` - 圆形
+- `highlight` - 高亮
+- `strike-through` - 删除线
+- `crossed-off` - 划掉
+- `bracket` - 括号
+
+## 总结
+
+Rough Notation 为你的博客或文档添加了独特的<Notation type="highlight" color="#f1c40f">手绘风格注释</Notation>，让内容更加生动有趣。结合 Astro 的 MDX 支持，可以轻松地在技术文档中添加专业的注释效果。
+
+更多信息请访问 <Notation type="underline" color="#548e9b">roughnotation.com</Notation>

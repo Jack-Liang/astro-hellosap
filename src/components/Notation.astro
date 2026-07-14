@@ -1,0 +1,20 @@
+---
+type Props = {
+  type?: "underline" | "circle" | "crossed-off" | "highlight" | "strike-through" | "bracket";
+  color?: string;
+  strokeWidth?: number;
+  animationDuration?: number;
+};
+
+const { type = "underline", color = "red", strokeWidth = 1.5, animationDuration = 800 } = Astro.props;
+---
+
+<span
+  data-notation
+  data-notation-type={type}
+  data-notation-color={color}
+  data-notation-stroke-width={strokeWidth}
+  data-notation-animation-duration={animationDuration}
+>
+  <slot />
+</span>

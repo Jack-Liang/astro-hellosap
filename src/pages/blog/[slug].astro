@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content'
 import readingTime from 'reading-time'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Bio from '../../components/Bio.astro';
+import Notation from '../../components/Notation.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts')
@@ -37,7 +38,7 @@ const { Content } = await render(post)
   </header>
   <div class="container">
     <article class="content">
-      <Content />
+      <Content components={{ Notation: Notation }} />
     </article>
     <hr />
     <Bio />
@@ -181,4 +182,49 @@ const { Content } = await render(post)
   
   initTagsToggle();
   document.addEventListener('astro:page-load', initTagsToggle);
+</script>
+
+<script>
+  import { annotate, annotationGroup } from "rough-notation";
+
+  function initNotation() {
+    const notations = document.querySelectorAll("[data-notation]");
+    if (notations.length === 0) return;
+
+    const annotations = Array.from(notations).map((node) => {
+      const el = node as HTMLElement;
+      const type = el.dataset.notationType as "underline" | "circle" | "crossed-off" | "highlight" | "strike-through" | "bracket";
+      const color = el.dataset.notationColor;
+      const strokeWidth = el.dataset.notationStrokeWidth;
+      const animationDuration = el.dataset.notationAnimationDuration;
+
+      return annotate(el, {
+        type: type || "underline",
+        color: color || "red",
+        animate: true,
+        animationDuration: animationDuration ? Number(animationDuration) : 800,
+        multiline: type === "bracket" ? false : true,
+        brackets: ["left", "right"],
+        strokeWidth: strokeWidth ? Number(strokeWidth) : 1.5,
+      });
+    });
+
+    const group = annotationGroup(annotations);
+
+    // 使用 IntersectionObserver 检测第一个元素进入视口时播放动画
+    const firstEl = notations[0] as HTMLElement;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          group.show();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(firstEl);
+  }
+
+  initNotation();
+  document.addEventListener('astro:page-load', initNotation);
 </script>

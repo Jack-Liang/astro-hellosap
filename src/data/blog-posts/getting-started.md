@@ -1,6 +1,6 @@
 ---
 title: SAP 快速开始
-slug: start
+slug: start-hide
 publishDate: 15 Apr 2026
 description: 欢迎使用我们的SAP系统，本文将带领你快速上手SAP。
 hidden: true
