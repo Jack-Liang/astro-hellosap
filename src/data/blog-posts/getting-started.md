@@ -98,8 +98,9 @@ SAP客户端的配置参数如下：
 - [SAP 学习资源: 免费教程分享](/blog/study-resource) 
 - [SAP业务/开发课程精选](/blog/good-courses)
 - 推荐新手阅读[电子书：由浅入深学习 SAP 财务](https://weread.qq.com/book-detail?type=1&senderVid=11207524&v=0f932af0813abb01cg013b59)第一章，增加对 SAP 的基础理解。
-![电子书目录](https://i.kiksoft.net/blog/start/book-SAP-introduce.jpg)
 
+  <img src="https://i.kiksoft.net/blog/start/book-SAP-introduce.jpg" alt="电子书目录" style="width: 75%;">
+  
 ---
 
 ## 5. 常见问题
