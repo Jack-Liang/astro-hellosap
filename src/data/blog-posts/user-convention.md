@@ -105,4 +105,6 @@ hidden: true
 管理员联系邮箱：admin@sapehr.cn
  
 ---
+<!--[if IE]>
 <a href="/blog/change-sapgui-browser-control/" rel="noopener">🚀若您在SAPGUI中访问本页面时显示异常，请修改设置。</a>
+<![endif]-->
