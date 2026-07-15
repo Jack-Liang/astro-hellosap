@@ -22,7 +22,7 @@ const permalink = Astro.site.href;
         <source srcset="https://pexels.kiksoft.net/api/random?orientation=square" media="(min-width: 600px)">
         <img class="hero-image" alt="Illustration of person reading a book" src="/assets/home-illustration-small.png" width="550" height="466">
       </picture>
-      <span class="hero-curtain" aria-hidden="true"></span>
+      <div class="hero-lottie" aria-hidden="true"></div>
       <!-- <p class="caption">
         Illustration by
         <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6" target="_blank" rel="noopener">Icons 8</a>
@@ -106,28 +106,32 @@ const permalink = Astro.site.href;
     background: none;
   }
 
-  /* 加载占位：主题色幕布，加载完向右拉走 */
-  .hero-curtain {
+  /* 加载占位：猫咪 Lottie 动画，图片加载完淡出 */
+  .hero-lottie {
     position: absolute;
     inset: 0;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(
       135deg,
-      rgba(84, 142, 155, 0.85),
-      rgba(110, 180, 195, 0.75),
-      rgba(150, 205, 200, 0.8),
-      rgba(95, 165, 175, 0.75),
-      rgba(84, 142, 155, 0.85)
+      rgba(84, 142, 155, 0.12),
+      rgba(110, 180, 195, 0.08),
+      rgba(150, 205, 200, 0.1)
     );
-    background-size: 300% 300%;
-    animation: flow 6s ease-in-out infinite;
-    transform-origin: left center;
-    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.9s ease;
+    transition: opacity 0.6s ease;
   }
 
-  .hero-image-container.loaded .hero-curtain {
-    transform: scaleX(0);
+  .hero-lottie svg {
+    width: 75%;
+    height: auto;
+    max-height: 90%;
+  }
+
+  .hero-image-container.loaded .hero-lottie {
     opacity: 0;
+    pointer-events: none;
   }
 
   .hero-image-container picture {
@@ -155,12 +159,6 @@ const permalink = Astro.site.href;
 
   .hero-image-container.loaded .hero-image {
     opacity: 1;
-  }
-
-  /* 多色渐变缓慢流动，柔和不抢眼 */
-  @keyframes flow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
   }
 
   @media (max-width: 1200px) {
@@ -219,15 +217,47 @@ const permalink = Astro.site.href;
 </style>
 
 <script>
+  import lottie from 'lottie-web/build/player/lottie_svg.js';
+
+  let heroAnim = null;
+
   function initHeroImage() {
     const container = document.querySelector('.hero-image-container');
     const img = container && container.querySelector('.hero-image');
+    const lottieEl = container && container.querySelector('.hero-lottie');
     if (!container || !img) return;
+
+    // 加载并播放猫咪 Lottie 动画（仅未加载时）
+    if (lottieEl && !lottieEl.dataset.loaded) {
+      lottieEl.dataset.loaded = '1';
+      fetch('/assets/cat-playing.json')
+        .then((r) => r.json())
+        .then((data) => {
+          // 若图片已先于动画加载完成，则不必播放
+          if (container.classList.contains('loaded')) return;
+          heroAnim = lottie.loadAnimation({
+            container: lottieEl,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: data,
+          });
+        })
+        .catch(() => {});
+    }
 
     const markLoaded = () => {
       // 用 rAF 确保浏览器先记录初始态（opacity:0）再过渡，避免缓存图秒加载跳过动画
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => container.classList.add('loaded'));
+        requestAnimationFrame(() => {
+          container.classList.add('loaded');
+          // 图片就绪后停止并销毁 Lottie，释放资源
+          if (heroAnim) {
+            heroAnim.stop();
+            heroAnim.destroy();
+            heroAnim = null;
+          }
+        });
       });
     };
 

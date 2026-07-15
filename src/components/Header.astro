@@ -12,11 +12,40 @@ const { current = '' } = Astro.props;
     max-width: 1400px;
     padding: 2em;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: padding 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* 滚动后压缩 padding、加阴影、背景更不透明 */
+  :global(header.scrolled) {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  :global(.theme-dark) header {
+    background-color: rgba(32, 33, 34, 0.7);
+  }
+
+  :global(.theme-dark) :global(header.scrolled) {
+    background-color: rgba(32, 33, 34, 0.85);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
   }
 
   @media screen and (max-width: 520px) {
     header {
       padding: 2em 0;
+    }
+
+    :global(header.scrolled) {
+      padding-top: 1em;
+      padding-bottom: 1em;
     }
   }
 </style>
@@ -25,3 +54,22 @@ const { current = '' } = Astro.props;
   <Logo />
   <Nav current={current} />
 </header>
+
+<script>
+  function initStickyHeader() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    const onScroll = () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  initStickyHeader();
+  document.addEventListener('astro:page-load', initStickyHeader);
+</script>

@@ -30,16 +30,13 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
       </div>
     </div>
 
-    <div id="posts-container">
-      {allPosts.map((post, index) => {
+    <div id="posts-container" class="posts-grid">
+      {allPosts.map((post) => {
         const href = `/blog/${post.data.slug}`;
         return (
-          <div class="post-item-wrapper" data-tags={JSON.stringify(post.data.tags || [])}>
-            { index !== 0 && <hr /> }
-            <div class="post-item">
-              <h2>
-                <a href={href}>{post.data.title}</a>
-              </h2>
+          <article class="post-card post-item-wrapper reveal" data-tags={JSON.stringify(post.data.tags || [])}>
+            <a class="post-card-link" href={href}>
+              <h2>{post.data.title}</h2>
               <p>{post.data.description}</p>
               {post.data.tags && post.data.tags.length > 0 && (
                 <div class="post-tags">
@@ -51,8 +48,8 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
               <div class="post-item-footer">
                 <span class="post-item-date">— {post.data.publishDate}</span>
               </div>
-            </div>
-          </div>
+            </a>
+          </article>
         )
       })}
     </div>
@@ -85,22 +82,11 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
         });
         btn.classList.add('active');
 
-        let visibleCount = 0;
         postWrappers.forEach(function(wrapper) {
           const tagsAttr = wrapper.getAttribute('data-tags');
           const tags = tagsAttr ? JSON.parse(tagsAttr) : [];
           const shouldShow = selectedTag === '' || tags.includes(selectedTag);
-
-          if (shouldShow) {
-            wrapper.style.display = 'block';
-            const hr = wrapper.querySelector('hr');
-            if (hr) {
-              hr.style.display = visibleCount === 0 ? 'none' : 'block';
-            }
-            visibleCount++;
-          } else {
-            wrapper.style.display = 'none';
-          }
+          wrapper.style.display = shouldShow ? '' : 'none';
         });
       });
     });
@@ -111,7 +97,14 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
 </script>
 
 <style>
-  h2,
+  h2 {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    margin: 0 0 0.4em 0;
+    font-size: 1.6em;
+    transition: color 0.2s ease;
+  }
+
   .post-item-footer {
     font-family: var(--font-family-sans);
     font-weight: 700;
@@ -121,11 +114,65 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
     color: var(--text-secondary);
     text-align: left;
     text-transform: uppercase;
-    margin-right: 16px;
+    font-weight: 400;
   }
 
-  hr {
-    margin: 60px auto;
+  /* 文章列表：单列竖排 */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .post-card {
+    background-color: var(--background-body);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+  }
+
+  .post-card:hover h2 {
+    color: var(--primary-color);
+  }
+
+  .post-card-link {
+    display: block;
+    padding: 1.6em 2em;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-card-link p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin: 0 0 0.8em 0;
+    line-height: 1.6;
+  }
+
+  :global(.theme-dark) .post-card {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .post-tags {
+    margin: 0 0 0.8em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .post-tag {
+    padding: 3px 10px;
+    background: var(--tag-bg);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
   }
 
   .tags-filter {
@@ -207,20 +254,5 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
   .tag-btn.active {
     background: var(--primary-color);
     color: white;
-  }
-
-  .post-tags {
-    margin: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .post-tag {
-    padding: 3px 10px;
-    background: var(--tag-bg);
-    border-radius: 12px;
-    font-size: 12px;
-    color: var(--text-secondary);
   }
 </style>

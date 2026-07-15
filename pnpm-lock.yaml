@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^5.5.2
         version: 5.18.1(@types/node@24.13.2)(rollup@4.60.1)(typescript@5.9.3)
+      lottie-web:
+        specifier: ^5.13.0
+        version: 5.13.0
       reading-time:
         specifier: ^1.5.0
         version: 1.5.0
@@ -1299,6 +1302,9 @@ packages:
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
+
+  lottie-web@5.13.0:
+    resolution: {integrity: sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==}
 
   lru-cache@11.3.5:
     resolution: {integrity: sha512-NxVFwLAnrd9i7KUBxC4DrUhmgjzOs+1Qm50D3oF1/oL+r1NpZ4gA7xvG0/zJ8evR7zIKn4vLf7qTNduWFtCrRw==}
@@ -3342,6 +3348,8 @@ snapshots:
   locate-character@3.0.0: {}
 
   longest-streak@3.1.0: {}
+
+  lottie-web@5.13.0: {}
 
   lru-cache@11.3.5: {}
 
