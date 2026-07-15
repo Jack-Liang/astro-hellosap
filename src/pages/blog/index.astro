@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = '文章列表';
 const description = 'Latest articles.';
-const permalink = `${Astro.site.href}blog`;
+const permalink = new URL('blog', Astro.site).href;
 
 let allPosts = await getCollection('posts')
 allPosts = allPosts.filter(post => !post.data.hidden)
@@ -59,67 +59,38 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
   </div>
 </BaseLayout>
 
-<script is:inline>
+<script>
+  import { createTagsToggle } from '../../scripts/tags-toggle.js'
+
   function initTagFilter() {
     const tagBtns = document.querySelectorAll('.tag-btn');
     const postWrappers = document.querySelectorAll('.post-item-wrapper');
-    const filterTags = document.getElementById('filter-tags');
-    const filterToggle = document.getElementById('filter-tags-toggle');
-    
+
     if (!tagBtns.length) return;
-    
-    const checkTagsOverflow = function() {
-      if (filterTags && filterToggle) {
-        const tagsHeight = filterTags.offsetHeight;
-        const lineHeight = 38;
-        const maxLines = 2;
-        const threshold = lineHeight * maxLines;
-        
-        if (tagsHeight > threshold) {
-          filterToggle.style.display = 'flex';
-          filterTags.classList.add('collapsed');
-          filterToggle.querySelector('.toggle-text').textContent = '展开';
-          filterToggle.querySelector('.toggle-arrow').textContent = '▼';
-        } else {
-          filterToggle.style.display = 'none';
-          filterTags.classList.remove('collapsed');
-        }
-      }
-    };
-    
-    if (filterToggle) {
-      filterToggle.addEventListener('click', function() {
-        const isCollapsed = filterTags.classList.contains('collapsed');
-        
-        if (isCollapsed) {
-          filterTags.classList.remove('collapsed');
-          filterToggle.querySelector('.toggle-text').textContent = '收起';
-          filterToggle.querySelector('.toggle-arrow').textContent = '▲';
-        } else {
-          filterTags.classList.add('collapsed');
-          filterToggle.querySelector('.toggle-text').textContent = '展开';
-          filterToggle.querySelector('.toggle-arrow').textContent = '▼';
-        }
-      });
-    }
-    
-    window.addEventListener('resize', checkTagsOverflow);
-    
+
+    // 标签栏折叠（与文章详情页共用逻辑）
+    createTagsToggle('filter-tags', 'filter-tags-toggle', {
+      lineHeight: 38,
+      maxLines: 2,
+      expandedDisplay: 'flex'
+    });
+
+    // 标签筛选：点击按 tag 显隐文章
     tagBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
         const selectedTag = btn.getAttribute('data-tag');
-        
+
         tagBtns.forEach(function(b) {
           b.classList.remove('active');
         });
         btn.classList.add('active');
-        
+
         let visibleCount = 0;
         postWrappers.forEach(function(wrapper) {
           const tagsAttr = wrapper.getAttribute('data-tags');
           const tags = tagsAttr ? JSON.parse(tagsAttr) : [];
           const shouldShow = selectedTag === '' || tags.includes(selectedTag);
-          
+
           if (shouldShow) {
             wrapper.style.display = 'block';
             const hr = wrapper.querySelector('hr');
@@ -133,16 +104,8 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
         });
       });
     });
-    
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        checkTagsOverflow();
-        setTimeout(checkTagsOverflow, 500);
-        setTimeout(checkTagsOverflow, 1000);
-      });
-    });
   }
-  
+
   initTagFilter();
   document.addEventListener('astro:page-load', initTagFilter);
 </script>
@@ -255,13 +218,9 @@ const allTags = [...new Set(allPosts.flatMap(post => post.data.tags || []))].sor
 
   .post-tag {
     padding: 3px 10px;
-    background: #f0f0f0;
+    background: var(--tag-bg);
     border-radius: 12px;
     font-size: 12px;
     color: var(--text-secondary);
-  }
-
-  :global(.theme-dark) .post-tag {
-    background: #3a3a3a;
   }
 </style>

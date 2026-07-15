@@ -13,9 +13,22 @@
   }
 
   .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .logo-name {
     font-size: 1.2rem;
     font-weight: 700;
     font-family: var(--font-family-sans);
+  }
+
+  .logo-domain {
+    font-size: 0.75rem;
+    font-family: var(--font-family-sans);
+    color: var(--text-secondary);
+    margin-top: 2px;
   }
 
   @media screen and (max-width: 520px) {
@@ -23,7 +36,11 @@
       display: none;
     }
 
-    .logo-text {
+    .logo-name {
+      margin-left: 12px;
+    }
+
+    .logo-domain {
       margin-left: 12px;
     }
   }
@@ -31,5 +48,8 @@
 
 <a href="/">
   <img alt="Blog Logo" src="/assets/logo.svg" width="75" height="50" />
-  <span class="logo-text">Hello SAP</span>
+  <span class="logo-text">
+    <span class="logo-name">Hello SAP</span>
+    <span class="logo-domain">kiksoft.net</span>
+  </span>
 </a>

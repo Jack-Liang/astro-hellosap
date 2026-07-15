@@ -5,6 +5,10 @@ import sitemap from '@astrojs/sitemap'
 import remarkGfm from 'remark-gfm'
 import remarkSmartypants from 'remark-smartypants'
 import rehypeExternalLinks from 'rehype-external-links'
+import { getHiddenSlugs } from './src/utils/hidden-slugs.js'
+
+// 在配置阶段读取，避免每个 page 请求都扫描文件系统
+const hiddenSlugs = await getHiddenSlugs()
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,14 +18,16 @@ export default defineConfig({
     svelte(),
     sitemap({
       filter: (page) => {
-        const excludePaths = ['/markdown-test/', '/hello-world/', '/start/']
-        return !excludePaths.some(path => page.includes(path))
+        return !hiddenSlugs.some((slug) => page.includes(`/blog/${slug}/`))
       }
     })
   ],
   markdown: {
     shikiConfig: {
-      theme: 'nord',
+      themes: {
+        light: 'nord',
+        dark: 'github-dark',
+      },
     },
     remarkPlugins: [remarkGfm, remarkSmartypants],
     rehypePlugins: [

@@ -3,6 +3,7 @@
   --text-main: #36393b;
   --text-secondary: #6b6f72;
   --primary-color: #548e9b;
+  --tag-bg: #f0f0f0;
   --font-family-serif: Merriweather, serif;
   --font-family-sans: 'Fira Sans', sans-serif;
 }
@@ -12,6 +13,7 @@
   --text-main: #fff;
   --text-secondary: #ccc;
   --primary-color: #548e9b;
+  --tag-bg: #3a3a3a;
 }
 
 html {
@@ -174,6 +176,16 @@ pre code {
   padding: 0;
 }
 
+/* Shiki 双主题切换：暗色模式下使用 dark 配色变量 */
+html.theme-dark .astro-code,
+html.theme-dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
 blockquote {
   border-left: 4px solid #cccccc;
   font-size: 1.4em;
@@ -241,16 +253,15 @@ td {
   margin-left: 10px;
   gap: 0.6em;
   border-radius: 99em;
-  background-color: var(--theme-code-inline-bg);
 }
 
 .theme-toggle > label:focus-within {
   outline: 2px solid transparent;
-  box-shadow: 0 0 0 0.08em var(--theme-accent), 0 0 0 0.12em white;
+  box-shadow: 0 0 0 0.08em var(--primary-color), 0 0 0 0.12em var(--background-body);
 }
 
 .theme-toggle > label {
-  color: var(--theme-code-inline-text);
+  color: var(--text-main);
   position: relative;
   display: flex;
   align-items: center;
@@ -260,7 +271,7 @@ td {
 }
 
 .theme-toggle .checked {
-  color: var(--theme-accent);
+  color: var(--primary-color);
   opacity: 1;
 }
 

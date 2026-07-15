@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const { title, description, permalink } = Astro.props
-const socialUrl = Astro.site.href + 'assets/social.png'
+const socialUrl = new URL('assets/social.png', Astro.site).href
 ---
 
 <!-- Global Metadata -->
@@ -53,5 +53,9 @@ const socialUrl = Astro.site.href + 'assets/social.png'
     root.classList.add('theme-dark')
   } else {
     root.classList.remove('theme-dark')
+  }
+  // IE 检测：documentMode 仅 IE 8-11 存在，用于仅对 IE 显示兼容提示
+  if (document.documentMode) {
+    root.classList.add('is-ie')
   }
 </script>

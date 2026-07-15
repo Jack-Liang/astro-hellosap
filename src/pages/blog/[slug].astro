@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 const { title, slug, description, publishDate, tags } = post.data;
 const readingTimeEstimate = readingTime(post.body).text
-const permalink = `${Astro.site.href}blog/${slug}`;
+const permalink = new URL(`blog/${slug}`, Astro.site).href;
 const { Content } = await render(post)
 ---
 
@@ -76,14 +76,10 @@ const { Content } = await render(post)
 
   .post-tag {
     padding: 5px 14px;
-    background: #f0f0f0;
+    background: var(--tag-bg);
     border-radius: 15px;
     font-size: 14px;
     color: var(--text-secondary);
-  }
-
-  :global(.theme-dark) .post-tag {
-    background: #3a3a3a;
   }
 
   .tags-wrapper {
@@ -135,53 +131,18 @@ const { Content } = await render(post)
   }
 </style>
 
-<script is:inline>
-  function initTagsToggle() {
-    const postTags = document.getElementById('post-tags');
-    const tagsToggle = document.getElementById('tags-toggle');
-    
-    if (!postTags) return;
-    
-    const checkTagsOverflow = function() {
-      if (postTags && tagsToggle) {
-        const tagsHeight = postTags.offsetHeight;
-        const lineHeight = 40;
-        const maxLines = 2;
-        
-        if (tagsHeight > lineHeight * maxLines) {
-          tagsToggle.style.display = 'inline-flex';
-          postTags.classList.add('collapsed');
-          tagsToggle.querySelector('.toggle-text').textContent = '展开';
-          tagsToggle.querySelector('.toggle-arrow').textContent = '▼';
-        } else {
-          tagsToggle.style.display = 'none';
-          postTags.classList.remove('collapsed');
-        }
-      }
-    };
-    
-    if (tagsToggle) {
-      tagsToggle.addEventListener('click', function() {
-        const isCollapsed = postTags.classList.contains('collapsed');
-        
-        if (isCollapsed) {
-          postTags.classList.remove('collapsed');
-          tagsToggle.querySelector('.toggle-text').textContent = '收起';
-          tagsToggle.querySelector('.toggle-arrow').textContent = '▲';
-        } else {
-          postTags.classList.add('collapsed');
-          tagsToggle.querySelector('.toggle-text').textContent = '展开';
-          tagsToggle.querySelector('.toggle-arrow').textContent = '▼';
-        }
-      });
-    }
-    
-    window.addEventListener('resize', checkTagsOverflow);
-    setTimeout(checkTagsOverflow, 100);
-  }
-  
-  initTagsToggle();
-  document.addEventListener('astro:page-load', initTagsToggle);
+<script>
+  import { createTagsToggle } from '../../scripts/tags-toggle.js'
+
+  const initTagsToggle = () =>
+    createTagsToggle('post-tags', 'tags-toggle', {
+      lineHeight: 40,
+      maxLines: 2,
+      expandedDisplay: 'inline-flex'
+    })
+
+  initTagsToggle()
+  document.addEventListener('astro:page-load', initTagsToggle)
 </script>
 
 <script>
