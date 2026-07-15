@@ -102,11 +102,7 @@ const permalink = Astro.site.href;
     background: #f5f6f7;
   }
 
-  .hero-image-container.loaded {
-    background: none;
-  }
-
-  /* 加载占位：猫咪 Lottie 动画，图片加载完淡出 */
+  /* 加载占位：猫咪 Lottie 动画 + 渐变幕布，图片加载完从右向左拉开 */
   .hero-lottie {
     position: absolute;
     inset: 0;
@@ -116,11 +112,15 @@ const permalink = Astro.site.href;
     justify-content: center;
     background: linear-gradient(
       135deg,
-      rgba(84, 142, 155, 0.12),
-      rgba(110, 180, 195, 0.08),
-      rgba(150, 205, 200, 0.1)
+      rgba(84, 142, 155, 0.4),
+      rgba(110, 180, 195, 0.3),
+      rgba(150, 205, 200, 0.35),
+      rgba(95, 165, 175, 0.3),
+      rgba(84, 142, 155, 0.4)
     );
-    transition: opacity 0.6s ease;
+    /* 用 clip-path 从右向左裁切幕布，像真实幕布被拉走，露出背后图片 */
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .hero-lottie svg {
@@ -130,8 +130,8 @@ const permalink = Astro.site.href;
   }
 
   .hero-image-container.loaded .hero-lottie {
-    opacity: 0;
-    pointer-events: none;
+    /* inset(top right bottom left)：右边裁切到 100%，整块幕布从右向左消失 */
+    clip-path: inset(0 0 0 100%);
   }
 
   .hero-image-container picture {
@@ -152,13 +152,8 @@ const permalink = Astro.site.href;
     width: 100%;
     max-width: 550px;
     margin-bottom: 1em;
-    opacity: 0;
     border-radius: 12px;
-    transition: opacity 0.9s ease;
-  }
-
-  .hero-image-container.loaded .hero-image {
-    opacity: 1;
+    /* 图片始终可见，由幕布拉开来“露出”，不自行淡入，保证与拉幕方向一致 */
   }
 
   @media (max-width: 1200px) {
