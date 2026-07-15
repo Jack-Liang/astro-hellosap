@@ -1,0 +1,91 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="giscus-wrapper">
+  <h2>评论</h2>
+  <div id="giscus-comments"></div>
+</div>
+
+<script is:inline>
+  function getGiscusTheme() {
+    return document.documentElement.classList.contains('theme-dark') ? 'dark_dimmed' : 'light';
+  }
+
+  function loadGiscus() {
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'Jack-Liang/astro-hellosap');
+    script.setAttribute('data-repo-id', 'R_kgDORCGvMQ');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDORCGvMc4DBQpX');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', getGiscusTheme());
+    script.setAttribute('data-lang', 'zh-CN');
+    script.setAttribute('data-loading', 'lazy');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    const container = document.getElementById('giscus-comments');
+    if (container) {
+      container.appendChild(script);
+    }
+  }
+
+  // 页面加载时初始化 Giscus
+  loadGiscus();
+
+  // Astro 页面切换时重新初始化
+  document.addEventListener('astro:page-load', () => {
+    const container = document.getElementById('giscus-comments');
+    if (container && !container.querySelector('script')) {
+      loadGiscus();
+    }
+  });
+
+  // 监听主题切换（class 变化）
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class') {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            { giscus: { setConfig: { theme: getGiscusTheme() } } },
+            'https://giscus.app'
+          );
+        }
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, { attributes: true });
+</script>
+
+<style>
+  .giscus-wrapper {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color, #e5e7eb);
+  }
+
+  .giscus-wrapper h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  /* 响应式调整 */
+  @media (max-width: 768px) {
+    .giscus-wrapper {
+      margin-top: 2rem;
+    }
+  }
+</style>
