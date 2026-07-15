@@ -8,7 +8,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hellosap.net',
+  site: 'https://kiksoft.net',
   integrations: [
     mdx(),
     svelte(),

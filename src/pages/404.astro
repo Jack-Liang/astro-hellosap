@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = '页面未找到 - SAP学习中心';
+const description = '您访问的页面不存在或已被移除。';
+const permalink = `${Astro.site.href}404`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="not-found">
+    <h1>404</h1>
+    <p class="message">抱歉，您访问的页面不存在或已被移除。</p>
+    <a href="/" class="back-home">返回首页</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .not-found {
+    text-align: center;
+    padding: 4em 1em;
+  }
+
+  .not-found h1 {
+    font-size: 6em;
+    margin: 0 0 0.2em 0;
+    color: var(--primary-color);
+    line-height: 1;
+  }
+
+  .message {
+    font-size: 1.3em;
+    color: var(--text-secondary);
+    margin-bottom: 2em;
+  }
+
+  .back-home {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: var(--font-family-sans);
+    transition: opacity 0.2s ease;
+  }
+
+  .back-home:hover {
+    color: #fff;
+    opacity: 0.85;
+  }
+</style>

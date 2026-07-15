@@ -22,13 +22,26 @@ async function handleStaticAsset(event) {
     });
     return asset;
   } catch (error) {
-    console.error('Asset not found:', error);
-    return new Response('Not Found', {
-      status: 404,
-      headers: {
-        'content-type': 'text/plain'
-      }
-    });
+    // 找不到资产时回退到 404.html，返回 404 状态码
+    try {
+      const notFoundUrl = new URL(event.request.url);
+      notFoundUrl.pathname = '/404.html';
+      const notFoundAsset = await getAssetFromKV(event, {
+        mapRequestToAsset: () => new Request(notFoundUrl, event.request)
+      });
+      return new Response(notFoundAsset.body, {
+        status: 404,
+        headers: notFoundAsset.headers
+      });
+    } catch (fallbackError) {
+      console.error('Asset not found and no 404.html:', error);
+      return new Response('Not Found', {
+        status: 404,
+        headers: {
+          'content-type': 'text/plain'
+        }
+      });
+    }
   }
 }
 
