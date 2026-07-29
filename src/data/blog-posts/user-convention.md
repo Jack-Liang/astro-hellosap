@@ -96,6 +96,7 @@ hidden: true
 
 本系统为多人共享，请勿随意修改他人的配置和开发内容。
 
+
 ## <span class="icon-book">知识产权</span>
 系统内所有资料、代码、文档等仅用于学习与实践 SAP 技术，未经授权，禁止复制、传播或用于其他用途。
 
@@ -103,8 +104,54 @@ hidden: true
 若违反上述规定，平台有权立即暂停或终止您的使用权限。感谢您的理解与配合，祝您学习愉快！
 
 管理员联系邮箱：admin@sapehr.cn
- 
+<!--  
 ---
-<!--[if IE]>
-<a href="/blog/change-sapgui-browser-control/" rel="noopener">🚀若您在SAPGUI中访问本页面时显示异常，请修改设置。</a>
-<![endif]-->
+
+## <span class="icon-chart">获取公网 IP</span>
+
+
+<div id="ip-info">
+  <p><strong>您的公网 IP 地址：</strong></p>
+  <pre id="ip-address">加载中...</pre>
+</div>
+
+<style>
+#ip-info {
+  margin: 16px 0;
+  padding: 16px;
+  background-color: var(--tag-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #ddd);
+}
+#ip-info p {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+}
+#ip-address {
+  margin: 0;
+  padding: 12px;
+  background-color: var(--background-body);
+  border-radius: 4px;
+  border: 1px solid var(--border-color, #ccc);
+  font-family: monospace;
+  color: var(--text-main);
+}
+:global(html.theme-dark) #ip-info {
+  --border-color: #3a3a3a;
+}
+:global(html.theme-dark) #ip-address {
+  border-color: #3a3a3a;
+}
+</style>
+
+<script>
+  fetch('https://ipinfo.io/json')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('ip-address').innerHTML = JSON.stringify(d, null, 2);
+    })
+    .catch(e => {
+      document.getElementById('ip-address').innerHTML = '获取失败\n' + e;
+    });
+</script>
+ -->
