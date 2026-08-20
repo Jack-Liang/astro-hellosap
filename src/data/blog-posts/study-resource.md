@@ -17,7 +17,7 @@ tags: ['资源', '学习', '教程']
     ![Windows系统安装包](https://i.kiksoft.net/blog/study-resource/p2.png)
 
     Mac系统区分 Apple M 系列芯片（下图1）和 Intel 芯片（下图2），分别对应不同的安装包。
-    
+
     ![Mac系统安装包](https://i.kiksoft.net/blog/study-resource/p3.png)
     ![Mac系统安装包](https://i.kiksoft.net/blog/study-resource/p4.png)
 
@@ -34,7 +34,7 @@ tags: ['资源', '学习', '教程']
 - [SAP教程 S4资料](https://pan.baidu.com/s/1NwsCLlCaMTYL4eHXFjG1xA?pwd=vwuh)
 - [Deliverable for Phase1-项目准备等5个文件](https://pan.baidu.com/s/1lVUqSWHjm1okKcCDLgKxzQ?pwd=tsu6)
 - [后勤WM等2个文件](https://pan.baidu.com/s/1WeThCc15hjpQpLP7fft-SQ?pwd=farw)
-- **[更多SAP教程-200+G](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)**
+- **[更多SAP教程-200+G（无需付费）](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)**
 
 ## 网站
 - [SAP Learning](https://learning.sap.com/)：SAP 提供的学习平台，里面有一些免费课程，还有一些SAP认证相关的课程。
