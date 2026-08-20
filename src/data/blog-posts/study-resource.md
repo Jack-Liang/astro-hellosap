@@ -17,6 +17,7 @@ tags: ['资源', '学习', '教程']
     ![Windows系统安装包](https://i.kiksoft.net/blog/study-resource/p2.png)
 
     Mac系统区分 Apple M 系列芯片（下图1）和 Intel 芯片（下图2），分别对应不同的安装包。
+    
     ![Mac系统安装包](https://i.kiksoft.net/blog/study-resource/p3.png)
     ![Mac系统安装包](https://i.kiksoft.net/blog/study-resource/p4.png)
 
