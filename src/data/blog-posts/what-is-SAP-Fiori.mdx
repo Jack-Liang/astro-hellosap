@@ -1,0 +1,175 @@
+---
+title: 什么是 SAP Fiori？
+slug: what-is-SAP-Fiori
+publishDate: 26 Aug 2026
+description: SAP Fiori 是 S/4HANA 时代的现代 Web 前端，基于 SAPUI5，提供基于角色的响应式业务体验
+tags: ['Fiori', 'SAPUI5', '前端']
+---
+
+![SAP Fiori 概览](https://images.pexels.com/photos/17751751/pexels-photo-17751751.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+
+如果你用过 SAP GUI，第一次打开 Fiori 时多半会有种「这是 SAP 吗？」的错觉——干净的应用磁贴、浏览器里直接打开、手机上也能用。SAP Fiori 就是 SAP 给 S/4HANA 时代准备的**现代用户体验**，它不是某个单一软件，而是一套设计语言 + 技术框架 + 应用集合的总称。
+
+### 从 SAP GUI 到 Fiori
+
+传统 SAP GUI 把所有功能塞进事务码和菜单树里，新手面对满屏字段往往无从下手。Fiori 的思路相反：**按角色组织**——采购员看到采购相关的应用，销售人员看到销售相关的应用，每个人只看到和自己工作相关的入口，界面也更接近大家熟悉的 Web 应用。
+
+## Fiori 的定义与演进
+
+SAP Fiori 于 2013 年正式发布，最初只包含约 25 个标准应用，目标是把 SAP 最常用的业务场景重新设计成简洁、现代、基于角色的 Web 应用。经过多年演进，今天 Fiori 已经成为 S/4HANA 的**默认用户体验**，应用数量扩展到数千个。
+
+Fiori 的技术基础是 **SAPUI5**（SAP UI Development Toolkit for HTML5），一个面向企业级场景的 JavaScript 前端框架，提供大量预置 UI 控件、MVC 开发模型、双向数据绑定和跨设备响应式布局能力。开发者用 SAPUI5 写应用，最终在浏览器里运行。
+
+> 简单记：Fiori 是「产品 / 体验」的名字，SAPUI5 是「开发框架」的名字。一个 Fiori 应用，通常就是用 SAPUI5 写出来的。
+
+### 三代设计体系
+
+Fiori 的视觉和交互经历了三代演进，了解这个脉络能帮你理解为什么今天的 Fiori 看起来和 2013 年大不相同：
+
+- **Fiori 1.0（2013）**：经典的 Tiles 磁贴风格，白底蓝条，简洁但视觉较为单一
+- **Fiori 2.0（2016）**：引入 FLP Home Page、Me Area、统一通知中心，支持多标签浏览
+- **Fiori 3.0 / Horizon（2021+）**：全新的 **Horizon 视觉主题**，圆角、柔和阴影、更现代的配色，同时支持深色模式（Quartz Dark / Horizon Dark）
+
+2026 年的 S/4HANA 版本中，Horizon 已经成为默认主题。
+
+## 五大设计原则
+
+Fiori 之所以区别于普通 Web 应用，核心在于五条设计原则，它们贯穿所有 Fiori 应用的设计：
+
+| 原则 | 含义 | 举例 |
+| :--- | :--- | :--- |
+| 1. 基于角色（Role-based） | 按业务角色组织应用，每个人只看到和自己相关的功能 | 采购员看到「创建采购订单」，而非所有采购相关事务码 |
+| 2. 响应式（Responsive） | 一套应用适配桌面、平板、手机多种设备 | 同一个审批应用在手机上也能用 |
+| 3. 简单（Simple） | 单任务、单屏幕，一次只做一件事 | 把复杂事务拆成多个聚焦的应用 |
+| 4. 一致体验（Consistent） | 所有应用遵循统一交互模式 | 列表、搜索、筛选、对象页的用法处处相同 |
+| 5. 即时价值（Instant Value） | 几步之内就能完成任务，无需培训 | 聚焦核心任务，减少多余操作 |
+
+SAP 官方强调的是**减少步骤、一屏完成、聚焦单一目标**，而非流传的所谓「3 次点击」硬性指标。实际设计中，完成任务的效率比点击次数的绝对数字更重要。
+
+## 技术架构
+
+![Fiori 技术架构](https://i.kiksoft.net/blog/fiori-architecture.png)
+
+Fiori 是一个典型的前后端分离架构，请求从用户浏览器一路到 ABAP 后端，可以分成以下几层：
+
+#### 1. 表示层（浏览器 / 设备）
+
+用户用浏览器打开 Fiori Launchpad，加载的页面本身就是 SAPUI5 应用，负责界面渲染和交互。
+
+#### 2. Fiori Launchpad（FLP）
+
+浏览器的统一入口，类似「开始菜单」。它负责加载应用、管理导航、Tiles（应用磁贴）、用户个性化设置、统一搜索等。
+
+#### 3. SAPUI5 应用层
+
+具体的业务应用，如「创建采购订单」「显示销售订单」。它们在前端运行，处理界面逻辑，但不直接读数据库——数据通过 OData 服务获取。
+
+#### 4. OData 服务层 / SAP Gateway
+
+应用和后端之间的「数据接口」。前端需要数据时，调用后端发布的 OData 服务，后端返回结构化数据。OData 是基于 HTTP 的查询协议，可以把它理解为一个标准化的 REST API。
+
+**SAP Gateway** 是这一层的关键组件，它通常部署在 ABAP 系统中（或作为独立的 Gateway Hub），负责将 ABAP 后端的数据模型暴露为 OData 服务。没有 Gateway，Fiori 前端就无法消费后端数据。
+
+#### 5. ABAP 后端 / HANA 数据库
+
+真正的业务逻辑和数据存储仍在 ABAP 服务器和数据库中。S/4HANA 使用 SAP HANA 列式数据库，提供高性能的数据读写。Fiori 只是把传统 SAP GUI 里要做的事，换了一种更现代的方式呈现。
+
+#### 核心流程
+
+用户操作（浏览器）→ Fiori Launchpad 加载 SAPUI5 应用 → 应用通过 OData 调用 SAP Gateway → Gateway 路由到 ABAP 后端 → ABAP 处理业务逻辑、读写 HANA 数据库 → 结果经 OData 返回 → 应用更新界面。
+
+可以看到，这与 SAP GUI 的三层架构本质相同，差异主要在表示层——SAP GUI 用桌面客户端渲染，Fiori 用浏览器和 SAPUI5 渲染。
+
+## Fiori Launchpad（FLP）入口
+
+Fiori Launchpad 是用户日常接触最多的部分，它就是一个 Web 地址，浏览器打开即可使用。
+
+- 通过浏览器访问 Fiori Launchpad 的 URL（具体地址由系统管理员提供）。
+- 在 SAP GUI 端，也可以通过事务码 `/n/ui2/flp` 直接打开 Fiori Launchpad。
+- 进入后看到的是一组 **Tiles**（应用磁贴），每个 Tile 对应一个应用；Tiles 按 **Groups / Catalogs** 分组组织，并按角色分配。
+
+> 如果你在 SAP GUI 里听人提起 `/n/ui2/flp`，指的就是打开 Fiori Launchpad。
+
+企业部署 Fiori 时，有两种主流选择：
+- **本地部署**：Fiori Launchpad 运行在 ABAP 前端服务器（Front-end Server）上
+- **云端部署**：通过 **SAP BTP Launchpad Service** 或 **SAP Build Work Zone** 提供统一的云启动台，可整合 Fiori 应用与非 SAP 应用
+
+## Fiori 应用的类型
+
+并非所有 Fiori 应用都一样，SAP 官方将其分为三大类：
+
+| 类型 | 用途 | 特点 |
+| :--- | :--- | :--- |
+| **Transactional** | 事务处理 | 创建、编辑业务单据，如创建采购订单 |
+| **Analytical** | 分析型 | 数据可视化、KPI 监控、仪表盘，常与 Smart Business KPI 磁贴配合使用 |
+| **Fact Sheet** | 事实表 | 搜索和查看某个业务对象的完整信息，如查看一个物料的所有属性 |
+
+此外，还有 **Overview Page（概览页）**，它聚合了多个相关应用和数据卡片，是很多业务角色的首页入口。
+
+日常工作中遇到最多的是 Transactional 和 Analytical 两类。
+
+## 两种开发方式
+
+开发 Fiori 应用时，团队通常会根据场景选择以下两种方式之一：
+
+### 1. Freestyle 开发（自由式）
+
+完全手写 SAPUI5 代码，从 XML Views 到 JavaScript Controller 都由开发者控制。适合需要高度自定义 UI 和复杂交互逻辑的场景，灵活但开发周期较长。
+
+### 2. Fiori Elements（基于模板）
+
+基于 CDS (Core Data Services) 注解和后端数据模型，自动生成列表页、对象页、概览页等标准界面。开发者只需定义数据模型和注解，无需手写前端代码。适合标准的增删改查（CRUD）场景，**开发效率远高于 Freestyle**。
+
+> 实际项目中，大量标准业务应用使用 Fiori Elements 快速生成，仅在需要特殊交互时才切换到 Freestyle。
+
+## Fiori vs SAP GUI 对比
+
+Fiori 和 SAP GUI 不是替代关系，而是「并存 + 互补」。下表对照两者，便于你判断什么时候用哪个：
+
+| 维度 | SAP GUI | SAP Fiori |
+| :--- | :--- | :--- |
+| 形态 | 桌面客户端（Windows / Java） | 浏览器 Web 应用 |
+| 访问方式 | 安装客户端后配置连接 | 浏览器直接打开 URL |
+| 组织方式 | 事务码 + Easy Access 菜单树 | 按角色的 Tiles |
+| 体验 | 信息密集、字段多 | 简洁、聚焦单任务、响应式 |
+| 设备 | 主要桌面 | 桌面 / 平板 / 手机 |
+| 适用场景 | 复杂事务、ABAP 开发、后台配置 | 日常业务操作、自助查询、审批 |
+| 学习成本 | 较高，需熟悉事务码 | 较低，接近普通 Web 应用 |
+
+> 经验：日常业务用 Fiori 更顺手；后台配置、开发调试、低频复杂事务还是离不开 SAP GUI。
+
+## Fiori 与 S/4HANA 的关系
+
+S/4HANA 把 Fiori 确立为**默认用户体验**：S/4HANA 自带数千个开箱即用的 Fiori 应用，覆盖财务、销售、采购、生产、人力资源等业务线，企业启用后无需自己开发就能用上现代界面。
+
+- ECC 时代：Fiori 是可选附加，需要额外安装、配置
+- S/4HANA 时代：Fiori 是「自带」的，开箱即用，应用数量随版本持续提升
+
+### Clean Core 战略中的 Fiori
+
+SAP 近年大力推行的 **Clean Core（洁净核心）** 策略，要求企业尽量不对 S/4HANA 核心代码做直接修改，而是将扩展放在 SAP BTP 平台上开发。在这种架构下：
+
+- **标准流程**使用 S/4HANA 自带的 Fiori 应用
+- **自定义扩展**在 SAP BTP 上通过 CAP (Cloud Application Programming Model) + Fiori Elements 开发，以 Side-by-Side 方式与核心系统对接
+
+这意味着 Fiori 不仅是前端界面，更是 SAP 现代化战略中**标准扩展的默认技术栈**。
+
+对普通用户来说，记住一点就够：**S/4HANA 的现代界面就是 Fiori**，打开浏览器看到的那个磁贴墙，就是它的入口。
+
+---
+
+## 小结
+
+SAP Fiori 把「用 SAP」这件事从「装客户端、记事务码、面对满屏字段」变成了「打开浏览器、点应用、几步完成」。它和 SAP GUI 并存互补，构成了 S/4HANA 时代用户访问系统的两条入口。理解了 Fiori，也就理解了为什么今天越来越多 SAP 操作不再需要装 SAP GUI。
+
+---
+
+**参考资料：**
+
+- [SAP Fiori | SAP Help Portal](https://help.sap.com/docs/SAP_FIORI)
+
+- [SAP Fiori Design Guidelines](https://experience.sap.com/fiori-design/)
+
+- [Fiori Apps Reference Library](https://fioriappslibrary.hana.ondemand.com/)
+
+- [What is SAP Fiori? | SAP 官方介绍](https://www.sap.com/products/fiori.html)
