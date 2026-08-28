@@ -21,11 +21,11 @@ hidden: true
 
 <img src="https://pexels.kiksoft.net/api/random?orientation=landscape" alt="yellow-metal-design-decoration" width="940" height="325" style="width: 940px; height: 325px; object-fit: cover; object-position: center;">
 <div style="position: absolute; top: 20px; right: 20px; text-align: center;">
-  <img id="qrcode-img" src="https://i.kiksoft.net/weGroup.png" alt="微信群二维码" style="width: 150px;" />
+  <img id="qrcode-img" src="https://i.kiksoft.net/weGroup.jpeg" alt="微信群二维码" style="width: 150px;" />
   <p style="margin-top: 4px; font-size: 12px; color: #666;">扫码加群一起交流</p>
   <script>
     // 添加时间戳确保图片每次都实时加载
-    document.getElementById('qrcode-img').src = 'https://i.kiksoft.net/weGroup.png?timestamp=' + Date.now();
+    document.getElementById('qrcode-img').src = 'https://i.kiksoft.net/weGroup.jpeg?timestamp=' + Date.now();
   </script>
   <div style="margin: 16px 0 0; text-align: center;">
     <a href="/blog/study-resource" style="

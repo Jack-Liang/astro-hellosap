@@ -8,12 +8,12 @@ tags: ['入门', '配置', '安装']
 ---
 ![雨林背景](https://i.kiksoft.net/blog/start/rainforest.jpg)
 
-<img id="group-img" src="https://i.kiksoft.net/weGroup.png" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
+<img id="group-img" src="https://i.kiksoft.net/weGroup.jpeg" alt="SAP 用户交流群" style="width: 40%; float: right; margin-left: 20px; margin-bottom: 20px;">
 <script>
   (function() {
     const img = document.getElementById('group-img');
     if (img) {
-      img.src = 'https://i.kiksoft.net/weGroup.png?timestamp=' + Date.now();
+      img.src = 'https://i.kiksoft.net/weGroup.jpeg?timestamp=' + Date.now();
     }
   })();
 </script>

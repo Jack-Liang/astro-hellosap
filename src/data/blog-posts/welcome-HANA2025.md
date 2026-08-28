@@ -42,7 +42,7 @@ tags: ['S/4HANA', '系统升级', '通知']
     4月15日系统关闭之前，系统管理员将通过各种渠道联系并帮你切换到2025系统，请注意关注。
 
 <div align="center">
-  <img src="https://i.kiksoft.net/weGroup.png" alt="二维码" width="200"/>
+  <img src="https://i.kiksoft.net/weGroup.jpeg" alt="二维码" width="200"/>
 </div>
 
 ## S/4 HANA 2025 功能介绍
