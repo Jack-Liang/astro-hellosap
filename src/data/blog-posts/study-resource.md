@@ -34,7 +34,10 @@ tags: ['资源', '学习', '教程']
 - [SAP教程 S4资料](https://pan.baidu.com/s/1NwsCLlCaMTYL4eHXFjG1xA?pwd=vwuh)
 - [Deliverable for Phase1-项目准备等5个文件](https://pan.baidu.com/s/1lVUqSWHjm1okKcCDLgKxzQ?pwd=tsu6)
 - [后勤WM等2个文件](https://pan.baidu.com/s/1WeThCc15hjpQpLP7fft-SQ?pwd=farw)
-- **[更多SAP教程-200+G（无需付费）](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)**
+- **[更多SAP教程-200+G](https://www.123865.com/s/0LFGvd-QUbP3?pwd=xlG6)**：
+
+[【（无需付费，注册后不限速下载，点击注册】](https://login.123pan.com/centerlogin?register=invite)
+[![更多SAP教程-200+G（无需付费，注册后不限速下载）](https://i.kiksoft.net/blog/study-resource/p5.png)](https://login.123pan.com/centerlogin?register=invite)
 
 ## 网站
 - [SAP Learning](https://learning.sap.com/)：SAP 提供的学习平台，里面有一些免费课程，还有一些SAP认证相关的课程。
