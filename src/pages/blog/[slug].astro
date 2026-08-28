@@ -195,11 +195,14 @@ const { Content } = await render(post)
   import { annotate, annotationGroup } from "rough-notation";
 
   function initNotation() {
-    const notations = document.querySelectorAll("[data-notation]");
+    // ClientRouter 首次加载也会派发 astro:page-load，与模块直执行叠加会跑两遍，
+    // 用标记防止同一元素被重复 annotate（会插入两份 SVG、注册两套观察器）
+    const notations = document.querySelectorAll("[data-notation]:not([data-notation-ready])");
     if (notations.length === 0) return;
+    notations.forEach((n) => n.setAttribute("data-notation-ready", ""));
 
-    const annotations = Array.from(notations).map((node) => {
-      const el = node as HTMLElement;
+    const els = Array.from(notations) as HTMLElement[];
+    const annotations = els.map((el) => {
       const type = el.dataset.notationType as "underline" | "circle" | "crossed-off" | "highlight" | "strike-through" | "bracket";
       const color = el.dataset.notationColor;
       const strokeWidth = el.dataset.notationStrokeWidth;
@@ -218,18 +221,35 @@ const { Content } = await render(post)
 
     const group = annotationGroup(annotations);
 
-    // 使用 IntersectionObserver 检测第一个元素进入视口时播放动画
-    const firstEl = notations[0] as HTMLElement;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          group.show();
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.1 });
+    // rough-annotation 的 SVG 按绘制时刻的坐标绝对定位，库本身只监听 window.resize
+    // 和被注元素自身尺寸变化；图片晚加载、字体替换、<details> 展开等引发的整段
+    // 位移它感知不到，SVG 会留在原地错位。这里观察内容区的布局变化，任何变化
+    // 后把已显示的注释全部立即重绘（showing 状态下 show() 走 animate:false 的
+    // 无动画重绘路径，开销可忽略）。
+    const redrawAll = () => {
+      annotations.forEach((a) => a.isShowing() && a.show());
+    };
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver(redrawAll);
+      const article = document.querySelector("article.content");
+      if (article) ro.observe(article);
+      document
+        .querySelectorAll("article.content img, article.content details, .tags-inner")
+        .forEach((el) => ro.observe(el));
+    }
 
-    observer.observe(firstEl);
+    // 任意注释元素进入视口时播放动画（只触发一次；观察全部元素，
+    // 避免锚点跳转/快速滚动跳过第一个元素后动画永不触发）
+    let shown = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (shown) return;
+      if (entries.some((entry) => entry.isIntersecting)) {
+        shown = true;
+        observer.disconnect();
+        group.show();
+      }
+    }, { threshold: 0.1 });
+    els.forEach((el) => observer.observe(el));
   }
 
   initNotation();
