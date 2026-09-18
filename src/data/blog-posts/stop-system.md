@@ -20,7 +20,7 @@ tags: ['通知', '系统维护']
 
 微信群：
 
-![微信群](https://i.kiksoft.net/weGroup.jpeg?timestamp=1778049537750)
+<img src="https://i.kiksoft.net/weGroup.jpg" alt="微信群" onerror="this.onerror=null;this.src=this.src.replace(/\.jpg$/, '.png');this.onerror=function(){this.onerror=null;this.src=this.src.replace(/\.png$/, '.jpeg');}" />
 
 咨询邮箱：
 admin@sapehr.cn
