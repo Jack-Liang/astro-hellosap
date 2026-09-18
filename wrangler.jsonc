@@ -10,5 +10,11 @@
       "binding": "IMAGE_BUCKET",
       "bucket_name": "hellosap"
     }
-  ]
+  ],
+  "observability": {
+    "logs": {
+      "enabled": false,
+      "invocation_logs": true
+    }
+  }
 }
