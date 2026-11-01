@@ -21,11 +21,27 @@ hidden: true
 
 <img src="https://pexels.kiksoft.net/api/random?orientation=landscape" alt="yellow-metal-design-decoration" width="940" height="325" style="width: 940px; height: 325px; object-fit: cover; object-position: center;">
 <div style="position: absolute; top: 20px; right: 20px; text-align: center;">
-  <img id="qrcode-img" src="https://i.kiksoft.net/weGroup.jpeg" alt="微信群二维码" style="width: 150px;" />
+  <img id="qrcode-img" src="https://i.kiksoft.net/weGroup.jpg" alt="微信群二维码" onerror="this.onerror=null;this.src=this.src.replace(/\.jpg$/, '.png');this.onerror=function(){this.onerror=null;this.src=this.src.replace(/\.png$/, '.jpeg');}" style="width: 150px;" />
   <p style="margin-top: 4px; font-size: 12px; color: #666;">扫码加群一起交流</p>
   <script>
-    // 添加时间戳确保图片每次都实时加载
-    document.getElementById('qrcode-img').src = 'https://i.kiksoft.net/weGroup.jpeg?timestamp=' + Date.now();
+    // 添加时间戳确保图片每次都实时加载，并按 jpg → png → jpeg 顺序回退
+    (function() {
+      const img = document.getElementById('qrcode-img');
+      if (img) {
+        const ts = Date.now();
+        const exts = ['.jpg', '.png', '.jpeg'];
+        let idx = 0;
+        img.onerror = function() {
+          idx++;
+          if (idx < exts.length) {
+            img.src = 'https://i.kiksoft.net/weGroup' + exts[idx] + '?timestamp=' + ts;
+          } else {
+            img.onerror = null;
+          }
+        };
+        img.src = 'https://i.kiksoft.net/weGroup' + exts[0] + '?timestamp=' + ts;
+      }
+    })();
   </script>
   <div style="margin: 16px 0 0; text-align: center;">
     <a href="/blog/study-resource" style="
